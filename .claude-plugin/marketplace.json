@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "todomist",
+  "description": "Our Claude Code plugins, one folder each under plugins/.",
+  "owner": { "name": "Viishesh Jain" },
+  "plugins": [
+    {
+      "name": "workflow",
+      "source": "./plugins/workflow",
+      "description": "How we work in a project: plan a release, commit, review and rebuild a branch, cut a release."
+    }
+  ]
+}

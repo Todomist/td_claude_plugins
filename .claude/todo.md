@@ -1,0 +1,19 @@
+# Todo
+
+Everything we agreed to do that is not built yet. One row per piece of work; an ID never
+changes. A row leaves this file when it is built.
+
+| Column   | Meaning                                                              |
+| -------- | -------------------------------------------------------------------- |
+| ID       | A letter for the topic and a number: R repository, W workflow, D design, M MCP |
+| When     | `Next`, `Later`, or the step it waits for                             |
+| Priority | P1 needed next, P2 wanted soon, P3 nice to have                       |
+
+| ID  | Todo                                | Details                                                                                                                                                                                                                                                                                | When                 | Priority | Notes                          |
+| --- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | -------- | ------------------------------ |
+| W1  | Shared essentials in `workflow`     | Move the rules every project repeats (plan first, ask first, git basics, explaining, honesty, which skill when) into the plugin, loaded at the start of every chat by a `SessionStart` hook. Each project's `how-we-work.md` keeps only its own rules and the This project table | Next                 | P1       | Wording shown to the owner first |
+| R1  | Push to GitHub                      | Create the private repository `<owner>/claude_plugins` with `develop` as its default branch, push `develop` and the tag `workflow-v1.0.0`, and fill in `<owner>` in the README                                                                                                       | After W1             | P1       | GitHub owner not chosen yet     |
+| R2  | Switch the projects to the plugin   | Each project on its own branch, as the README's "Switch a project from its local copies" says                                                                                                                                                                                        | After R1             | P1       |                                |
+| R3  | Make the repository public          | Before: check every file for secrets and private project details. After: installing needs no GitHub login                                                                                                                                                                          | Later                | P2       |                                |
+| D1  | `design` plugin                     | The general parts of a project's `mockup-to-react` as skills: the three steps (look and change nothing, build, check), the conflict list, "the drop wins the look, our code wins data and behaviour", and the style system. Project values (mockup folder, app path, screen widths) come from table rows. Decide whether it covers mobile (Expo) as well as web | After R2             | P1       |                                |
+| M1  | Plugins with an MCP server          | One plugin per server. A remote server's code lives in its product's repository and the plugin holds only `.mcp.json` (the URL) and a skill on using its tools; a local server's code lives inside the plugin folder. Once the repository is public, plugins for our products' users can live here too | With the first server | P2       |                                |
