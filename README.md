@@ -25,10 +25,10 @@ Planned next: [.claude/todo.md](.claude/todo.md).
 
 ## Use a plugin in a project
 
-1. **Once per machine, while the repository is private:** git must reach GitHub without a
-   prompt. `brew install gh`, `gh auth login`, `gh auth setup-git` (or an SSH key without a
-   passphrase). A `GITHUB_TOKEN` in the environment alone is not enough.
-2. **In the project's `.claude/settings.json`** (committed, so everyone on the project gets it):
+The repository is public, so installing needs no GitHub login. For yourself only:
+`/plugin install td-workflow --marketplace todomist/claude_plugins`. For a whole project:
+
+1. **In the project's `.claude/settings.json`** (committed, so everyone on the project gets it):
 
    ```json
    {
@@ -41,9 +41,9 @@ Planned next: [.claude/todo.md](.claude/todo.md).
    }
    ```
 
-3. **Once per clone:** open the project in Claude Code, trust the folder, then run
+2. **Once per clone:** open the project in Claude Code, trust the folder, then run
    `claude plugin install td-workflow@todomist --scope project`.
-4. **Add the This project table** to the project's `.claude/how-we-work.md`:
+3. **Add the This project table** to the project's `.claude/how-we-work.md`:
    [template](plugins/td-workflow/templates/this-project.md).
 
 ### Pin and upgrade
