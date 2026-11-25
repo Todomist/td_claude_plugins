@@ -4,8 +4,8 @@ description: How a release is planned in numbered branches and how each branch i
 ---
 
 Read `plan-release.md` in this folder (`${CLAUDE_PLUGIN_ROOT}/skills/plan-release/`) in full
-and follow it. The project's values (main branch, run it, status, branch plan, todos, releases,
-extra planning rules) are in the **This project** table of `.claude/how-we-work.md`. If the
+and follow it. The project's values (work branch, release branch, run it, status, branch plan,
+todos, extra planning rules) are in the **This project** table of `.claude/how-we-work.md`. If the
 project names extra planning rules, read them too: they come on top of these.
 
 If the project has no **This project** table, stop and ask the owner to add one (template:
@@ -13,4 +13,4 @@ If the project has no **This project** table, stop and ask the owner to add one 
 
 - Show a plan in the chat first. Change the branch plan, the todos or the status file only after
   the owner's "yes".
-- Commits inside a branch are `/td-workflow:commit-rules`.
+- Commits inside a branch are `/td-commitcraft:commit-rules`.

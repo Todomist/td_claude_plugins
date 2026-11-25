@@ -1,12 +1,12 @@
 # Claude Code plugins
 
 Our one marketplace for Claude Code plugins. Every plugin lives here, in its own folder, with
-its own version: today `td-workflow`; later more plugins, new versions and other kinds of
+its own version: today `td-commitcraft`; later more plugins, new versions and other kinds of
 extensions (commands, agents, hooks, MCP servers). Never a new repository per plugin.
 
 | Plugin                                 | Version | What it holds                                                    |
 | -------------------------------------- | ------- | ---------------------------------------------------------------- |
-| [td-workflow](plugins/td-workflow/README.md) | 0.1.0   | How we work in a project: plan, commit, review, rebuild, release |
+| [td-commitcraft](plugins/td-commitcraft/README.md) | 0.1.0   | How we work in a project: plan, commit, review, rebuild, release |
 
 Planned next: [.claude/todo.md](.claude/todo.md).
 
@@ -19,14 +19,14 @@ Planned next: [.claude/todo.md](.claude/todo.md).
   `hooks/`, `.mcp.json`).
 - Plugins never depend on each other and never use files outside their own folder (those are
   not copied when a plugin is installed).
-- A plugin's skills are called with its name in front: `/td-workflow:commit-rules`.
+- A plugin's skills are called with its name in front: `/td-commitcraft:commit-rules`.
 - When a project installs a plugin, Claude Code copies that plugin's folder to
   `~/.claude/plugins/cache/todomist/<plugin>/<version>/` and runs that copy.
 
 ## Use a plugin in a project
 
 The repository is public, so installing needs no GitHub login. For yourself only:
-`/plugin install td-workflow --marketplace Todomist/td_claude_plugins`. For a whole project:
+`/plugin install td-commitcraft --marketplace Todomist/td_claude_plugins`. For a whole project:
 
 1. **In the project's `.claude/settings.json`** (committed, so everyone on the project gets it):
 
@@ -34,22 +34,23 @@ The repository is public, so installing needs no GitHub login. For yourself only
    {
      "extraKnownMarketplaces": {
        "todomist": {
-         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "td-workflow-v0.1.0" }
+         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "td-commitcraft-v0.1.0" }
        }
      },
-     "enabledPlugins": { "td-workflow@todomist": true }
+     "enabledPlugins": { "td-commitcraft@todomist": true }
    }
    ```
 
 2. **Once per clone:** open the project in Claude Code, trust the folder, then run
-   `claude plugin install td-workflow@todomist --scope project`.
+   `claude plugin install td-commitcraft@todomist --scope project`.
 3. **Add the This project table** to the project's `.claude/how-we-work.md`:
-   [template](plugins/td-workflow/templates/this-project.md).
+   [template](plugins/td-commitcraft/templates/this-project.md).
 
 ### Pin and upgrade
 
-- `ref` pins the marketplace to a tag (`td-workflow-v0.1.0`) or a full 40-character commit SHA.
-  Without `ref` the project follows the repository's default branch (`develop`).
+- `ref` pins the marketplace to a tag (`td-commitcraft-v0.1.0`) or a full 40-character commit SHA.
+  Without `ref` the project follows `develop`, the default branch, which holds unreleased work:
+  always pin a tag.
 - The pin is for the whole repository: every plugin a project uses from here comes from that
   tag. Plugins don't depend on each other, so that is safe.
 - Auto-update is off for our marketplace: nothing changes until the project updates.
@@ -61,18 +62,18 @@ The repository is public, so installing needs no GitHub login. For yourself only
 On one branch in that project, after the owner's "yes":
 
 1. Add the settings above and install the plugin.
-2. Delete the local copies: `.claude/skills/{commit-rules,review-commits,rebuild-commits}/`,
-   `.claude/scripts/review-commits.sh`, and the planning and release rules that now live in
-   `/td-workflow:plan-release`. Keeping both would show two wordings (`/commit-rules` and
-   `/td-workflow:commit-rules`).
+2. Delete the local copies: `.claude/skills/{commit-rules,rebuild-commits}/` and the planning
+   and release rules that now live in `/td-commitcraft:plan-release`. Keep
+   `.claude/skills/review-commits/` and `.claude/scripts/review-commits.sh` until the plugin
+   brings `review-commits` back. Keeping both would show two wordings (`/commit-rules` and
+   `/td-commitcraft:commit-rules`).
 3. In `.claude/how-we-work.md`, `.claude/skills/README.md` and `CLAUDE.md`: add or update the
-   This project table, and rename the skills to `/td-workflow:…`.
-4. In a new chat: `/td-workflow:commit-rules` loads, and `/td-workflow:review-commits` gives the
-   review script's full path.
+   This project table, and rename the skills to `/td-commitcraft:…`.
+4. In a new chat: `/td-commitcraft:commit-rules` loads.
 
 ## Work on this repository
 
-- Try a plugin without installing it: `claude --plugin-dir ./plugins/td-workflow`. After an edit,
+- Try a plugin without installing it: `claude --plugin-dir ./plugins/td-commitcraft`. After an edit,
   `/reload-plugins`.
 - Before every commit: `claude plugin validate . --strict` and
   `claude plugin validate ./plugins/td-<name> --strict`.
@@ -89,8 +90,16 @@ On one branch in that project, after the owner's "yes":
 
 ### Release a new version
 
-1. Raise only that plugin's `version` in its `plugin.json` (major, minor or patch: the plugin's
-   README says which), add a `CHANGELOG.md` entry, and update the table at the top.
-2. Tag the commit on `develop`: `git tag <plugin>-v<version>` (e.g. `td-workflow-v0.2.0`).
-3. Projects get it when they move their `ref` to the new tag. The same version means no update,
-   even with new commits.
+Work happens on `develop`, the default branch. `main` holds released versions only: the owner
+creates it and pushes to it, by hand or through a CI/CD pipeline. Nothing is released, tagged or
+pushed without the owner's explicit "yes".
+
+1. While working: each change adds a line under **Unreleased** in that plugin's `CHANGELOG.md`.
+   The version stays as it is.
+2. To release: on `develop`, raise only that plugin's `version` in its `plugin.json` (major,
+   minor or patch: the plugin's README says which), turn **Unreleased** into that version in the
+   CHANGELOG, and update the table at the top.
+3. Merge into `main` with `--no-ff` and tag the merge `<plugin>-v<version>`
+   (e.g. `td-commitcraft-v0.1.1`), then push `main` and the tag.
+4. The Claude directory follows `main`: publish the new version in the developer portal.
+   Projects get it when they move their `ref` to the new tag.

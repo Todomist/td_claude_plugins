@@ -1,17 +1,17 @@
 # The "This project" table: template
 
 Copy the section below into the project's `.claude/how-we-work.md` and fill in every row. The
-td-workflow skills take this project's values from it. Write `none` for a row that does not apply
+td-commitcraft skills take this project's values from it. Write `none` for a row that does not apply
 yet. What each row is for, and which skill reads it: the plugin's `README.md`.
 
 ## This project
 
-The `/td-workflow:…` skills come from the td-workflow plugin and take this project's values from this
+The `/td-commitcraft:…` skills come from the td-commitcraft plugin and take this project's values from this
 table.
 
 | What                   | Value                                                                      |
 | ---------------------- | -------------------------------------------------------------------------- |
-| Main branch            | `develop`                                                                  |
+| Work branch            | `develop`: every branch starts from it and merges back into it             |
 | Branch names           | `feature/<name>`, `fix/<name>`, `chore/<name>`                             |
 | Checks                 | `npm run check` from the repository root (lint, format, typecheck, tests)  |
 | Run it                 | How to start the app and try it end to end                                 |
@@ -19,9 +19,9 @@ table.
 | Status                 | The short "where we are" file, e.g. `.claude/docs/status.md`               |
 | Branch plan            | The file with the release's numbered branches                              |
 | Todos                  | The file with every item left for later                                    |
-| Releases               | Release branch name and where release notes live, or `none`                |
+| Release branch         | `main`, released versions only, tagged `v<version>`; notes in …, or `none` |
 | Extra planning rules   | A project file with planning rules on top of the plugin's, or `none`       |
-| Review script          | `bundled` (the plugin's), or a path in this project                        |
+| Review script          | A script in this project, e.g. `.claude/scripts/review-commits.sh`         |
 | Local review branch    | `todomist_local/<branch>` (local only, never pushed or merged)              |
 | Debug log prefix       | e.g. `vjconsole_<area>`                                                    |
 | Production             | What runs in production (database, hosting), or `none`                     |

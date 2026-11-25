@@ -8,8 +8,9 @@ Planned work: [.claude/todo.md](.claude/todo.md).
 
 - Plan first. Before changing anything, list exactly what will change and wait for "yes".
 - Keep it simple and short.
-- Git: `develop` is the main branch; work on it unless the owner asks for a branch. Never push
-  or merge unless asked. Never amend, reset or rewrite existing commits. Never add Claude as a
+- Git: work happens on `develop`, the default branch (or a branch, if the owner asks for one).
+  `main` holds released versions only; the owner creates it, and it changes only through a
+  release (README, "Release a new version"). Never release, tag, push or merge unless asked. Never amend, reset or rewrite existing commits. Never add Claude as a
   co-author.
 - Other projects are read only from here: a project changes only in its own repository, on its
   own branch.
@@ -21,7 +22,7 @@ Planned work: [.claude/todo.md](.claude/todo.md).
   `CHANGELOG.md`, plus one entry in `.claude-plugin/marketplace.json`.
 - Plugins never depend on each other and never use files outside their own folder.
 - Skills stay general: project values come from the project's **This project** table (the
-  `td-workflow` README is the contract). Project-only skills stay in their projects.
+  `td-commitcraft` README is the contract). Project-only skills stay in their projects.
 - A change projects should get raises that plugin's version, and only that plugin's, with a
   `CHANGELOG.md` entry. `version` lives in `plugin.json` only, never in the marketplace entry.
 - A skill points to its own files with `${CLAUDE_PLUGIN_ROOT}` in `SKILL.md`. The variable is
