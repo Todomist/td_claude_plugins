@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "How we work in a project: plan a release in branches, plan and make commits, review a branch commit by commit, rebuild its commits, and cut a release. Project values come from the This project table in .claude/how-we-work.md.",
   "author": { "name": "Viishesh Jain" },
-  "homepage": "https://github.com/Todomist/td_claude_plugins/tree/develop/plugins/td-workflow",
+  "homepage": "https://github.com/Todomist/td_claude_plugins/tree/main/plugins/td-workflow",
   "repository": "https://github.com/Todomist/td_claude_plugins",
   "license": "MIT"
 }
