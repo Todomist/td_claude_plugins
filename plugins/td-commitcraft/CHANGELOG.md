@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Renamed from `td-workflow` to `td-commitcraft`: the skills are now `/td-commitcraft:…`. The
+  author is Todomist.
 - Work branch and release branch: work happens on the work branch (`develop`); the release
   branch (`main`) holds released versions only. A release merges the work branch into the
   release branch with `--no-ff` and tags it, only after the owner's "yes". `plan-release` no

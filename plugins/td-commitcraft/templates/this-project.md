@@ -1,12 +1,12 @@
 # The "This project" table: template
 
 Copy the section below into the project's `.claude/how-we-work.md` and fill in every row. The
-td-workflow skills take this project's values from it. Write `none` for a row that does not apply
+td-commitcraft skills take this project's values from it. Write `none` for a row that does not apply
 yet. What each row is for, and which skill reads it: the plugin's `README.md`.
 
 ## This project
 
-The `/td-workflow:…` skills come from the td-workflow plugin and take this project's values from this
+The `/td-commitcraft:…` skills come from the td-commitcraft plugin and take this project's values from this
 table.
 
 | What                   | Value                                                                      |

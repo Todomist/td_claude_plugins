@@ -2,11 +2,11 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "todomist",
   "description": "Our Claude Code plugins, one folder each under plugins/.",
-  "owner": { "name": "Viishesh Jain" },
+  "owner": { "name": "Todomist" },
   "plugins": [
     {
-      "name": "td-workflow",
-      "source": "./plugins/td-workflow",
+      "name": "td-commitcraft",
+      "source": "./plugins/td-commitcraft",
       "description": "How we work in a project: plan a release, commit, review and rebuild a branch, cut a release."
     }
   ]

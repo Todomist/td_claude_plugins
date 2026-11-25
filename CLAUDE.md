@@ -22,7 +22,7 @@ Planned work: [.claude/todo.md](.claude/todo.md).
   `CHANGELOG.md`, plus one entry in `.claude-plugin/marketplace.json`.
 - Plugins never depend on each other and never use files outside their own folder.
 - Skills stay general: project values come from the project's **This project** table (the
-  `td-workflow` README is the contract). Project-only skills stay in their projects.
+  `td-commitcraft` README is the contract). Project-only skills stay in their projects.
 - A change projects should get raises that plugin's version, and only that plugin's, with a
   `CHANGELOG.md` entry. `version` lives in `plugin.json` only, never in the marketplace entry.
 - A skill points to its own files with `${CLAUDE_PLUGIN_ROOT}` in `SKILL.md`. The variable is

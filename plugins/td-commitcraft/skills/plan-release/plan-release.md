@@ -2,7 +2,7 @@
 
 How a release is planned in branches, how a branch is sized, how the branch plan, the todos and
 the status file are kept, and how releases and versions work. Commits inside a branch:
-`/td-workflow:commit-rules`. Words like "the work branch", "the branch plan", "the todos" or "the
+`/td-commitcraft:commit-rules`. Words like "the work branch", "the branch plan", "the todos" or "the
 status file" mean the values in the **This project** table of `.claude/how-we-work.md`. A row
 that says `none` means that part does not apply to this project yet.
 

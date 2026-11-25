@@ -1,4 +1,4 @@
-# td-workflow
+# td-commitcraft
 
 How we work in a project: plan a release in branches, plan and make commits, review a branch
 commit by commit, rebuild a branch's commits, and cut a release. The skills are general: each
@@ -8,17 +8,17 @@ one takes the project's own values from the **This project** table in the projec
 Install it for yourself:
 
 ```
-/plugin install td-workflow --marketplace Todomist/td_claude_plugins
+/plugin install td-commitcraft --marketplace Todomist/td_claude_plugins
 ```
 
 For a whole project, and to pin a version: the repository's [README](../../README.md).
 
 | Skill                          | When to use                                                                                |
 | ------------------------------ | ------------------------------------------------------------------------------------------ |
-| `/td-workflow:plan-release`    | Planning a release or a branch, adding a todo, after a branch is merged, cutting a release |
-| `/td-workflow:commit-rules`    | Before the first commit of a branch, when committing, and when finishing a branch          |
-| `/td-workflow:review-commits`  | Reviewing a branch commit by commit: "explain", "next", "chk again", "review is done"      |
-| `/td-workflow:rebuild-commits` | Rebuilding a branch's commits into a clean sequence. Only on request: it rewrites history  |
+| `/td-commitcraft:plan-release`    | Planning a release or a branch, adding a todo, after a branch is merged, cutting a release |
+| `/td-commitcraft:commit-rules`    | Before the first commit of a branch, when committing, and when finishing a branch          |
+| `/td-commitcraft:review-commits`  | Reviewing a branch commit by commit: "explain", "next", "chk again", "review is done"      |
+| `/td-commitcraft:rebuild-commits` | Rebuilding a branch's commits into a clean sequence. Only on request: it rewrites history  |
 
 The usual order in the life of a branch:
 
@@ -62,7 +62,7 @@ Nothing on its own: no hooks, no MCP servers, no network access, and it stores n
 skills are instructions for Claude.
 
 - `skills/review-commits/review-commits.sh` runs only when the owner starts it in a terminal
-  (`/td-workflow:review-commits` gives the full command, because the installed path changes with
+  (`/td-commitcraft:review-commits` gives the full command, because the installed path changes with
   each version). It uses git on the current repository only: it refuses to start with
   uncommitted changes, checks out the branch's commits one at a time, discards edits made while
   reviewing when it moves on, and returns to the branch at the end. It never pushes.

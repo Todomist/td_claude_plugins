@@ -9,7 +9,7 @@ checks" or "the review script" mean the values in its **This project** table.
 
 - Created from the work branch and named as the table's **Branch names** row says (e.g.
   `feature/<name>`, `fix/<name>`, `chore/<name>`).
-- How a release is split into branches and how big a branch is: `/td-workflow:plan-release`.
+- How a release is split into branches and how big a branch is: `/td-commitcraft:plan-release`.
 
 ## Commits
 
@@ -46,7 +46,7 @@ checks" or "the review script" mean the values in its **This project** table.
    approved a paid run.
 2. Check the commit layout: core pieces first, then one complete feature per commit with its
    tests; then ONE docs commit that updates the docs (how the application works); the `TEMP`
-   logs commit last. If the history no longer reads that way, suggest `/td-workflow:rebuild-commits`.
+   logs commit last. If the history no longer reads that way, suggest `/td-commitcraft:rebuild-commits`.
    Docs: short files (under about 100 lines), grouped by topic, plain words, diagrams and
    examples. They live in the project's docs folder (the **Docs** row), committed and never
    git-ignored; only `README.md` (setup) and `CLAUDE.md` stay at the root.
@@ -55,6 +55,6 @@ checks" or "the review script" mean the values in its **This project** table.
 4. Remind the owner to review commit by commit: suggest creating the local review branch from
    the branch (the **Local review branch** row: local only, never pushed or merged), and give
    them the review script command to run themselves (base: the work branch). Then follow
-   `/td-workflow:review-commits` as they move through the commits.
+   `/td-commitcraft:review-commits` as they move through the commits.
 5. After "approved, merge": merge into the work branch with `--no-ff`. Then follow "After a
-   branch is merged" in `/td-workflow:plan-release`.
+   branch is merged" in `/td-commitcraft:plan-release`.

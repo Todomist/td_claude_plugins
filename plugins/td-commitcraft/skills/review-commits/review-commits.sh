@@ -4,7 +4,7 @@
 # shows only that commit's diff. The branch itself is never moved.
 #
 # Usage (from the branch you want to review, with a clean working tree). The
-# /td-workflow:review-commits skill gives the full path to this file:
+# /td-commitcraft:review-commits skill gives the full path to this file:
 #   bash review-commits.sh            # base = develop
 #   bash review-commits.sh main       # custom base
 #   bash review-commits.sh develop 3  # start at commit #3
