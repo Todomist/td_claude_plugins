@@ -26,7 +26,7 @@ Planned next: [.claude/todo.md](.claude/todo.md).
 ## Use a plugin in a project
 
 The repository is public, so installing needs no GitHub login. For yourself only:
-`/plugin install td-workflow --marketplace todomist/claude_plugins`. For a whole project:
+`/plugin install td-workflow --marketplace Todomist/td_claude_plugins`. For a whole project:
 
 1. **In the project's `.claude/settings.json`** (committed, so everyone on the project gets it):
 
@@ -34,7 +34,7 @@ The repository is public, so installing needs no GitHub login. For yourself only
    {
      "extraKnownMarketplaces": {
        "todomist": {
-         "source": { "source": "github", "repo": "todomist/claude_plugins", "ref": "td-workflow-v0.1.0" }
+         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "td-workflow-v0.1.0" }
        }
      },
      "enabledPlugins": { "td-workflow@todomist": true }

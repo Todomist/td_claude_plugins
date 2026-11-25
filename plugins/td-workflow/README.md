@@ -8,7 +8,7 @@ one takes the project's own values from the **This project** table in the projec
 Install it for yourself:
 
 ```
-/plugin install td-workflow --marketplace todomist/claude_plugins
+/plugin install td-workflow --marketplace Todomist/td_claude_plugins
 ```
 
 For a whole project, and to pin a version: the repository's [README](../../README.md).
