@@ -34,7 +34,7 @@ The repository is public, so installing needs no GitHub login. For yourself only
    {
      "extraKnownMarketplaces": {
        "todomist": {
-         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "td-commitcraft-v0.1.0" }
+         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "main" }
        }
      },
      "enabledPlugins": { "td-commitcraft@todomist": true }
@@ -48,14 +48,13 @@ The repository is public, so installing needs no GitHub login. For yourself only
 
 ### Pin and upgrade
 
-- `ref` pins the marketplace to a tag (`td-commitcraft-v0.1.0`) or a full 40-character commit SHA.
-  Without `ref` the project follows `develop`, the default branch, which holds unreleased work:
-  always pin a tag.
-- The pin is for the whole repository: every plugin a project uses from here comes from that
-  tag. Plugins don't depend on each other, so that is safe.
-- Auto-update is off for our marketplace: nothing changes until the project updates.
-- To upgrade, on a branch in the project: change `ref` to the newer tag, then run
-  `claude plugin marketplace update todomist`.
+- `"ref": "main"` follows released versions only, because `main` changes only through a release.
+  Without `ref` the project follows `develop`, the default branch, which holds unreleased work.
+  We don't use tags; to stay on one exact release, `ref` can be its full 40-character commit SHA.
+- The `ref` is for the whole repository: every plugin a project uses from here comes from it.
+  Plugins don't depend on each other, so that is safe.
+- Auto-update is off for our marketplace: nothing changes until the project updates. To get the
+  latest release, run `claude plugin marketplace update todomist`.
 
 ### Switch a project from its local copies
 
@@ -91,15 +90,14 @@ On one branch in that project, after the owner's "yes":
 ### Release a new version
 
 Work happens on `develop`, the default branch. `main` holds released versions only: the owner
-creates it and pushes to it, by hand or through a CI/CD pipeline. Nothing is released, tagged or
-pushed without the owner's explicit "yes".
+creates it and pushes to it, by hand or through a CI/CD pipeline. Nothing is released or pushed
+without the owner's explicit "yes". We don't use tags.
 
 1. While working: each change adds a line under **Unreleased** in that plugin's `CHANGELOG.md`.
    The version stays as it is.
 2. To release: on `develop`, raise only that plugin's `version` in its `plugin.json` (major,
    minor or patch: the plugin's README says which), turn **Unreleased** into that version in the
    CHANGELOG, and update the table at the top.
-3. Merge into `main` with `--no-ff` and tag the merge `<plugin>-v<version>`
-   (e.g. `td-commitcraft-v0.1.1`), then push `main` and the tag.
+3. Merge into `main` with `--no-ff`, then push `main`.
 4. The Claude directory follows `main`: publish the new version in the developer portal.
-   Projects get it when they move their `ref` to the new tag.
+   Projects following `main` get it when they run `claude plugin marketplace update todomist`.

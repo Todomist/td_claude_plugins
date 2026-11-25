@@ -1,9 +1,9 @@
 # td-commitcraft
 
-How we work in a project: plan a release in branches, plan and make commits, review a branch
-commit by commit, rebuild a branch's commits, and cut a release. The skills are general: each
-one takes the project's own values from the **This project** table in the project's
-`.claude/how-we-work.md`.
+One versioned set of rules for how work happens in a project: plan a release in branches, plan
+and make commits, rebuild a branch's history, and release from develop to main. The skills are
+general: each one takes the project's own values from the **This project** table in the
+project's `.claude/how-we-work.md`.
 
 Install it for yourself:
 
@@ -62,7 +62,7 @@ Project-only skills (for example a project's code rules) stay in the project, be
 
 Nothing on its own: no hooks, no MCP servers, no scripts, no network access, and it stores no
 data. The skills are instructions for Claude, and `templates/this-project.md` is the table
-template.
+template. Privacy: [PRIVACY.md](PRIVACY.md).
 
 ## Versions
 
