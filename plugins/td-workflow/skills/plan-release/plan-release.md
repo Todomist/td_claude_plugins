@@ -2,7 +2,7 @@
 
 How a release is planned in branches, how a branch is sized, how the branch plan, the todos and
 the status file are kept, and how releases and versions work. Commits inside a branch:
-`/td-workflow:commit-rules`. Words like "the main branch", "the branch plan", "the todos" or "the
+`/td-workflow:commit-rules`. Words like "the work branch", "the branch plan", "the todos" or "the
 status file" mean the values in the **This project** table of `.claude/how-we-work.md`. A row
 that says `none` means that part does not apply to this project yet.
 
@@ -69,18 +69,22 @@ next branch. If a chat gets long mid-branch, write a short handoff first.
 
 ## Releases
 
-Skip this section while the **Releases** row says `none`.
+Skip this section while the **Release branch** row says `none`.
 
+- Work happens on the work branch: every branch starts from it and merges back into it. The
+  release branch holds released versions only; nothing is committed on it directly.
 - The app ships in releases, each with its own plan of numbered branches, all merged into the
-  main branch. The last branch of every release is `chore/finishing-touches`.
+  work branch. The last branch of every release is `chore/finishing-touches`.
 - `chore/finishing-touches` builds nothing new: it goes through the todos, picks what this
   release still needs and marks the rest for a later release; then it cleans up code and docs,
   keeps the test docs current, tests everything by hand and fixes the bugs it finds.
-- When the main branch is ready, cut the release branch from it, named as the **Releases** row
-  says (e.g. `release/<version>-<description>`). Builds and deploys come from the release
-  branch, and only when the owner asks.
+- **Releasing**, only after the owner's explicit "yes": merge the work branch into the release
+  branch with `--no-ff` and tag the merge as the **Release branch** row says (e.g. `v0.2.14`).
+  Push only when the owner asks. Builds and deploys come only from the release branch, by hand
+  or through the project's CI/CD pipeline.
 - Versions are MAJOR.MINOR.PATCH: the minor goes up once per release; the patch is the plan
-  number of the last branch merged into the main branch (#14 → 0.2.14), set in that branch's
-  last app commit. A fix made on a release branch after it is cut takes the next free patch.
+  number of the last branch merged into the work branch (#14 → 0.2.14), set in that branch's
+  last app commit. A fix for a released version goes through the work branch like any other
+  branch and ships in the next release.
 - Each release keeps its own notes (features, store status, what is next) where the
-  **Releases** row says.
+  **Release branch** row says.

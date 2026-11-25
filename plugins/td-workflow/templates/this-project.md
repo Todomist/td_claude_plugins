@@ -11,7 +11,7 @@ table.
 
 | What                   | Value                                                                      |
 | ---------------------- | -------------------------------------------------------------------------- |
-| Main branch            | `develop`                                                                  |
+| Work branch            | `develop`: every branch starts from it and merges back into it             |
 | Branch names           | `feature/<name>`, `fix/<name>`, `chore/<name>`                             |
 | Checks                 | `npm run check` from the repository root (lint, format, typecheck, tests)  |
 | Run it                 | How to start the app and try it end to end                                 |
@@ -19,7 +19,7 @@ table.
 | Status                 | The short "where we are" file, e.g. `.claude/docs/status.md`               |
 | Branch plan            | The file with the release's numbered branches                              |
 | Todos                  | The file with every item left for later                                    |
-| Releases               | Release branch name and where release notes live, or `none`                |
+| Release branch         | `main`, released versions only, tagged `v<version>`; notes in …, or `none` |
 | Extra planning rules   | A project file with planning rules on top of the plugin's, or `none`       |
 | Review script          | `bundled` (the plugin's), or a path in this project                        |
 | Local review branch    | `todomist_local/<branch>` (local only, never pushed or merged)              |

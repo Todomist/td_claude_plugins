@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Work branch and release branch: work happens on the work branch (`develop`); the release
+  branch (`main`) holds released versions only. A release merges the work branch into the
+  release branch with `--no-ff` and tags it, only after the owner's "yes". `plan-release` no
+  longer cuts `release/<version>-<description>` branches.
+- This project table: **Main branch** is now **Work branch**, and **Releases** is now
+  **Release branch**.
+
 ## 0.1.0
 
 - First version. Each skill is one wording, merged from the copies our projects kept in

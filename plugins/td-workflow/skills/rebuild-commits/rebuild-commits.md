@@ -3,7 +3,7 @@
 Only when the owner asks. A big branch grows as work commits; before the commit-by-commit review
 it can be rebuilt into a clean sequence. During a review nothing is rewritten: changes go on top
 as new commits (code first, then docs). Every rebuilt commit follows `/td-workflow:commit-rules`.
-"The main branch" (`<main>` below), "the checks" and "the review script" mean the values in the
+"The work branch" (`<work>` below), "the checks" and "the review script" mean the values in the
 **This project** table of `.claude/how-we-work.md`.
 
 ## The life of a branch
@@ -48,13 +48,13 @@ one place, and can try it. Never "all the server, then all the app".
 
 The branch keeps its name; the backup is the only extra branch.
 
-1. **Plan.** Read `git log <main>..<branch>` and `git diff --stat <main>...<branch>`, group the
+1. **Plan.** Read `git log <work>..<branch>` and `git diff --stat <work>...<branch>`, group the
    files into commits (folding each review commit into the one it belongs to), and show a table
    (number, subject, what is in it, what the owner can try). Change nothing until the owner
    types "yes".
 2. **Backup.** `git branch backup/<branch> <branch>` (the same name with the prefix, e.g.
    `backup/feature/offline-mode`). If it already exists, ask; never overwrite or delete it.
-3. **Rebuild on the branch itself** (clean working tree): `git reset --hard <main>`, then for
+3. **Rebuild on the branch itself** (clean working tree): `git reset --hard <work>`, then for
    each commit bring in only its files with `git checkout backup/<branch> -- <files>`, edit out
    what belongs to later commits, `git add`, run the checks, commit.
 4. **In batches, when the owner asks.** Build a few commits, stop, and wait for the review. What
@@ -65,7 +65,7 @@ The branch keeps its name; the backup is the only extra branch.
    only what was added or changed on purpose (list each). If anything else shows, a file was
    lost or changed: fix it before going on.
 6. **Hand over.** List the new commits, say the hashes changed, and remind the owner to recreate
-   the local review branch and run the review script (base: the main branch). Then suggest
+   the local review branch and run the review script (base: the work branch). Then suggest
    `/td-workflow:review-commits`.
 
 If the rebuild goes wrong or stops half way, `git reset --hard backup/<branch>` puts the branch

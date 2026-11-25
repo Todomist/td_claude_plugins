@@ -37,7 +37,7 @@ is missing, the skills stop and ask for it. Template to copy:
 
 | Row                    | Read by                                         | What it holds                                                     |
 | ---------------------- | ----------------------------------------------- | ----------------------------------------------------------------- |
-| Main branch            | all                                             | The branch every branch starts from and merges into              |
+| Work branch            | all                                             | The branch every branch starts from and merges back into          |
 | Branch names           | plan-release, commit-rules                      | How branches are named                                            |
 | Checks                 | commit-rules, rebuild-commits                   | The command that runs lint, format, typecheck and tests           |
 | Run it                 | plan-release, commit-rules                      | How to start the app and try it end to end                        |
@@ -45,7 +45,7 @@ is missing, the skills stop and ask for it. Template to copy:
 | Status                 | plan-release                                    | The short "where we are" file                                     |
 | Branch plan            | plan-release                                    | The file with the release's numbered branches                     |
 | Todos                  | plan-release, review-commits                    | The file with every item left for later                           |
-| Releases               | plan-release                                    | The release branch name and where release notes live              |
+| Release branch         | plan-release                                    | The branch with released versions only, its tags, the notes       |
 | Extra planning rules   | plan-release                                    | A project file with more planning rules                           |
 | Review script          | commit-rules, review-commits, rebuild-commits   | `bundled`, or a path in the project                               |
 | Local review branch    | commit-rules, rebuild-commits                   | The owner's local copy of a branch for reviewing                  |
@@ -70,11 +70,12 @@ skills are instructions for Claude.
 
 ## Versions
 
-The version is in `.claude-plugin/plugin.json`; what changed is in [CHANGELOG.md](CHANGELOG.md).
-While it is `0.x` the rules are still settling:
+`MAJOR.MINOR.PATCH`, in `.claude-plugin/plugin.json`; what changed is in
+[CHANGELOG.md](CHANGELOG.md).
 
-- **Minor** (0.1 → 0.2): any change to what the skills do, including a renamed or removed skill
-  or a changed table row.
-- **Patch** (0.1.0 → 0.1.1): wording fixes.
-- **1.0.0** once the rules are settled. From then on: major when projects must change something,
-  minor for a new skill or rule, patch for wording.
+- **Patch** (0.1.0 → 0.1.1): changes or fixes to existing skills, rules or wording.
+- **Minor** (0.1 → 0.2): a new skill or a new part of the plugin, such as a hook.
+- **Major** (→ 1.0.0): a big rework of how the plugin works.
+
+Changes collect under **Unreleased** in the CHANGELOG. The version is raised, tagged and
+released only after the owner's explicit "yes".

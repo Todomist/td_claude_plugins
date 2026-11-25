@@ -2,13 +2,13 @@
 
 How a commit-by-commit review chat works. Claude follows this whenever the owner reviews a branch
 (says "explain", "next", "chk again", or runs the review script), without being told again. The
-basics (git, "yes" before changes) are in `.claude/how-we-work.md`; "the main branch" (`<main>`
+basics (git, "yes" before changes) are in `.claude/how-we-work.md`; "the work branch" (`<work>`
 below), "the review script", "production", "the paid services" and "the examples" mean the
 values in its **This project** table.
 
 ## 1. During the review: change nothing
 
-- The owner runs the review script (base: the main branch): the repo is on a detached HEAD with
+- The owner runs the review script (base: the work branch): the repo is on a detached HEAD with
   one commit staged at a time.
 - Change **nothing** (files, commits, database, memory) until the owner says the review is done
   and `git branch --show-current` shows the branch again.
@@ -20,7 +20,7 @@ values in its **This project** table.
 ## 2. Find the staged commit, every time
 
 On every "explain", "next" or "chk again": `git diff --cached --stat`, then match it with
-`git diff --cached --quiet <sha>` over `git rev-list <main>..<branch>`. Start the answer with
+`git diff --cached --quiet <sha>` over `git rev-list <work>..<branch>`. Start the answer with
 `sha subject`. Never guess from earlier messages; skipped commits are fine.
 
 ## 3. Explain: small first, then in full
