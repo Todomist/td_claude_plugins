@@ -62,14 +62,14 @@ The repository is public, so installing needs no GitHub login. For yourself only
 On one branch in that project, after the owner's "yes":
 
 1. Add the settings above and install the plugin.
-2. Delete the local copies: `.claude/skills/{commit-rules,review-commits,rebuild-commits}/`,
-   `.claude/scripts/review-commits.sh`, and the planning and release rules that now live in
-   `/td-commitcraft:plan-release`. Keeping both would show two wordings (`/commit-rules` and
+2. Delete the local copies: `.claude/skills/{commit-rules,rebuild-commits}/` and the planning
+   and release rules that now live in `/td-commitcraft:plan-release`. Keep
+   `.claude/skills/review-commits/` and `.claude/scripts/review-commits.sh` until the plugin
+   brings `review-commits` back. Keeping both would show two wordings (`/commit-rules` and
    `/td-commitcraft:commit-rules`).
 3. In `.claude/how-we-work.md`, `.claude/skills/README.md` and `CLAUDE.md`: add or update the
    This project table, and rename the skills to `/td-commitcraft:…`.
-4. In a new chat: `/td-commitcraft:commit-rules` loads, and `/td-commitcraft:review-commits` gives the
-   review script's full path.
+4. In a new chat: `/td-commitcraft:commit-rules` loads.
 
 ## Work on this repository
 

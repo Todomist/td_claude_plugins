@@ -14,5 +14,4 @@ If the project has no **This project** table, stop and ask the owner to add one 
 - This rewrites the branch's history, so it runs only when the owner asked for it.
 - Step 1 is a plan table. Change nothing until the owner types "yes".
 - Make the backup branch before the first reset; never overwrite or delete an existing one.
-- Finish with the proof step (`git diff backup/<branch> HEAD`) and the hand-over, then suggest
-  `/td-commitcraft:review-commits` for the review itself.
+- Finish with the proof step (`git diff backup/<branch> HEAD`) and the hand-over.

@@ -13,7 +13,3 @@ If the project has no **This project** table, stop and ask the owner to add one 
 
 Before the first commit of a branch, tell the owner how many commits it needs and what each
 holds, and wait for "yes".
-
-Unless the table names another review script, it is the one bundled with this plugin. The
-command for the owner, with the work branch as the base:
-`bash "${CLAUDE_PLUGIN_ROOT}/skills/review-commits/review-commits.sh" <work branch>`.

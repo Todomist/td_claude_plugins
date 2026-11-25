@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- `review-commits` and its script are out of this version: the Claude directory accepts scripts
+  only from verified organizations. They come back in a later version. The **Review script** row
+  now always names a script in the project.
 - Renamed from `td-workflow` to `td-commitcraft`: the skills are now `/td-commitcraft:…`. The
   author is Todomist.
 - Work branch and release branch: work happens on the work branch (`develop`); the release
