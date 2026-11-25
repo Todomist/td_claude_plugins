@@ -8,9 +8,9 @@ Planned work: [.claude/todo.md](.claude/todo.md).
 
 - Plan first. Before changing anything, list exactly what will change and wait for "yes".
 - Keep it simple and short.
-- Git: work happens on `develop` (or a branch, if the owner asks for one). `main` holds released
-  versions only and changes only through a release (README, "Release a new version"). Never
-  push or merge unless asked. Never amend, reset or rewrite existing commits. Never add Claude as a
+- Git: work happens on `develop`, the default branch (or a branch, if the owner asks for one).
+  `main` holds released versions only; the owner creates it, and it changes only through a
+  release (README, "Release a new version"). Never release, tag, push or merge unless asked. Never amend, reset or rewrite existing commits. Never add Claude as a
   co-author.
 - Other projects are read only from here: a project changes only in its own repository, on its
   own branch.

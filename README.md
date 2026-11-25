@@ -49,7 +49,8 @@ The repository is public, so installing needs no GitHub login. For yourself only
 ### Pin and upgrade
 
 - `ref` pins the marketplace to a tag (`td-workflow-v0.1.0`) or a full 40-character commit SHA.
-  Without `ref` the project follows `main`, the latest released versions.
+  Without `ref` the project follows `develop`, the default branch, which holds unreleased work:
+  always pin a tag.
 - The pin is for the whole repository: every plugin a project uses from here comes from that
   tag. Plugins don't depend on each other, so that is safe.
 - Auto-update is off for our marketplace: nothing changes until the project updates.
@@ -89,15 +90,16 @@ On one branch in that project, after the owner's "yes":
 
 ### Release a new version
 
-Work happens on `develop`. `main` holds released versions only, and the Claude directory follows
-`main`.
+Work happens on `develop`, the default branch. `main` holds released versions only: the owner
+creates it and pushes to it, by hand or through a CI/CD pipeline. Nothing is released, tagged or
+pushed without the owner's explicit "yes".
 
-1. On `develop`: raise only that plugin's `version` in its `plugin.json` (major, minor or patch:
-   the plugin's README says which), add a `CHANGELOG.md` entry, and update the table at the top.
-2. Merge into `main` and tag the merge:
-   `git checkout main && git merge --no-ff develop && git tag -a <plugin>-v<version> -m "<plugin> <version>"`
-   (e.g. `td-workflow-v0.2.0`), then go back to `develop`.
-3. Push `main` and the tag. The directory picks up the new version from `main`; publish it in
-   the developer portal.
-4. Projects get it when they move their `ref` to the new tag. The same version means no update,
-   even with new commits.
+1. While working: each change adds a line under **Unreleased** in that plugin's `CHANGELOG.md`.
+   The version stays as it is.
+2. To release: on `develop`, raise only that plugin's `version` in its `plugin.json` (major,
+   minor or patch: the plugin's README says which), turn **Unreleased** into that version in the
+   CHANGELOG, and update the table at the top.
+3. Merge into `main` with `--no-ff` and tag the merge `<plugin>-v<version>`
+   (e.g. `td-workflow-v0.1.1`), then push `main` and the tag.
+4. The Claude directory follows `main`: publish the new version in the developer portal.
+   Projects get it when they move their `ref` to the new tag.
