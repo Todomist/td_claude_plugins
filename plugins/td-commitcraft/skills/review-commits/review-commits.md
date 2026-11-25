@@ -15,7 +15,8 @@ values in its **This project** table.
 - Production (database, file storage, hosting): read only. Give the SQL or the steps; the owner
   runs them.
 - No paid service calls during a review: use the fakes or saved results.
-- Mask secrets, keys, tokens, ids and phone numbers when reading `.env` or logs.
+- Never open `.env` files or other secret stores. If a secret, key, token, id or phone number
+  shows up in output or a log, mask it.
 
 ## 2. Find the staged commit, every time
 

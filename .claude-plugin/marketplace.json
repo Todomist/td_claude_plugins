@@ -7,7 +7,7 @@
     {
       "name": "td-commitcraft",
       "source": "./plugins/td-commitcraft",
-      "description": "Plan a release in branches, make commits, rebuild a branch's history, and release from develop to main."
+      "description": "Plan a release in branches, make and review commits, rebuild a branch's history, and release from develop to main."
     }
   ]
 }

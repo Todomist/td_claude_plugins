@@ -65,7 +65,8 @@ The branch keeps its name; the backup is the only extra branch.
    only what was added or changed on purpose (list each). If anything else shows, a file was
    lost or changed: fix it before going on.
 6. **Hand over.** List the new commits, say the hashes changed, and remind the owner to recreate
-   the local review branch and run the review script (base: the work branch).
+   the local review branch and run the review script (base: the work branch). Then suggest
+   `/td-commitcraft:review-commits`.
 
 If the rebuild goes wrong or stops half way, `git reset --hard backup/<branch>` puts the branch
 back exactly as it was.

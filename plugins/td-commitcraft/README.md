@@ -1,7 +1,8 @@
 # td-commitcraft
 
 One versioned set of rules for how work happens in a project: plan a release in branches, plan
-and make commits, rebuild a branch's history, and release from develop to main. The skills are
+and make commits, review a branch commit by commit, rebuild its history, and release from
+develop to main. The skills are
 general: each one takes the project's own values from the **This project** table in the
 project's `.claude/how-we-work.md`.
 
@@ -18,10 +19,8 @@ For a whole project, and to pin a version: the repository's [README](../../READM
 | --------------------------------- | ------------------------------------------------------------------------------------------ |
 | `/td-commitcraft:plan-release`    | Planning a release or a branch, adding a todo, after a branch is merged, cutting a release |
 | `/td-commitcraft:commit-rules`    | Before the first commit of a branch, when committing, and when finishing a branch          |
+| `/td-commitcraft:review-commits`  | Reviewing a branch commit by commit: "explain", "next", "chk again", "review is done"      |
 | `/td-commitcraft:rebuild-commits` | Rebuilding a branch's commits into a clean sequence. Only on request: it rewrites history  |
-
-A fourth skill, `review-commits` (a commit-by-commit review with its script), comes back in a
-later version.
 
 The usual order in the life of a branch:
 
@@ -29,7 +28,7 @@ The usual order in the life of a branch:
 2. Building → the project's own code rules
 3. Finishing the branch → `commit-rules` (end-of-branch steps)
 4. History messy → `rebuild-commits` (only on request)
-5. Reviewing → the owner, commit by commit, with the project's review script
+5. Reviewing → `review-commits`
 6. After the merge → `plan-release` (status, plan row, todos; a release when it is time)
 
 ## The contract: the "This project" table
@@ -47,23 +46,29 @@ is missing, the skills stop and ask for it. Template to copy:
 | Docs                   | commit-rules                                    | Where the docs on how the app works live                          |
 | Status                 | plan-release                                    | The short "where we are" file                                     |
 | Branch plan            | plan-release                                    | The file with the release's numbered branches                     |
-| Todos                  | plan-release                                    | The file with every item left for later                           |
+| Todos                  | plan-release, review-commits                    | The file with every item left for later                           |
 | Release branch         | plan-release                                    | The branch with released versions only, its tags, the notes       |
 | Extra planning rules   | plan-release                                    | A project file with more planning rules                           |
-| Review script          | commit-rules, rebuild-commits                   | A script in the project, e.g. `.claude/scripts/review-commits.sh` |
+| Review script          | commit-rules, review-commits, rebuild-commits   | `bundled`, or a path in the project                               |
 | Local review branch    | commit-rules, rebuild-commits                   | The owner's local copy of a branch for reviewing                  |
 | Debug log prefix       | commit-rules                                    | The prefix of temporary debug logs                                |
-| Production             | review-commits (later)                          | What runs in production (read only during a review)               |
-| Paid services          | commit-rules                                    | Services that cost money per call, and their fakes                |
-| Examples for the owner | review-commits (later)                          | Real things from the product that explanations start from         |
+| Production             | review-commits                                  | What runs in production (read only during a review)               |
+| Paid services          | commit-rules, review-commits                    | Services that cost money per call, and their fakes                |
+| Examples for the owner | review-commits                                  | Real things from the product that explanations start from         |
 
 Project-only skills (for example a project's code rules) stay in the project, beside these.
 
 ## What it runs
 
-Nothing on its own: no hooks, no MCP servers, no scripts, no network access, and it stores no
-data. The skills are instructions for Claude, and `templates/this-project.md` is the table
-template. Privacy: [PRIVACY.md](PRIVACY.md).
+Nothing on its own: no hooks, no MCP servers, no network access, and it stores no data. The
+skills are instructions for Claude. Privacy: [PRIVACY.md](PRIVACY.md).
+
+- `skills/review-commits/review-commits.sh` runs only when the owner starts it in a terminal
+  (`/td-commitcraft:review-commits` gives the full command, because the installed path changes
+  with each version). It uses git on the current repository only: it refuses to start with
+  uncommitted changes, checks out the branch's commits one at a time, discards edits made while
+  reviewing when it moves on, and returns to the branch at the end. It never pushes.
+- `templates/this-project.md` is the table template.
 
 ## Versions
 

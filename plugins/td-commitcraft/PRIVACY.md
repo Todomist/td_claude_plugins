@@ -1,8 +1,9 @@
 # Privacy
 
 td-commitcraft is a set of instructions (skills) for Claude Code. It collects no data, stores no
-data and sends nothing anywhere: it has no scripts, no hooks, no MCP servers and no network
-access.
+data and sends nothing anywhere: it has no hooks, no MCP servers and no network access. Its one
+script, `review-commits.sh`, runs only when the user starts it in a terminal, and uses git on the
+current repository only.
 
 The skills work on the user's own project through Claude Code's normal tools (reading files,
 running git and the project's checks), with the user's permission. What Claude Code itself does

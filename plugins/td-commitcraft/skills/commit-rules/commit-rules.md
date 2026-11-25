@@ -54,7 +54,7 @@ checks" or "the review script" mean the values in its **This project** table.
    dependencies, what any paid run cost, and anything that didn't work or needs their attention.
 4. Remind the owner to review commit by commit: suggest creating the local review branch from
    the branch (the **Local review branch** row: local only, never pushed or merged), and give
-   them the command for the review script (the **Review script** row) to run themselves, with
-   the work branch as the base.
+   them the review script command to run themselves (base: the work branch). Then follow
+   `/td-commitcraft:review-commits` as they move through the commits.
 5. After "approved, merge": merge into the work branch with `--no-ff`. Then follow "After a
    branch is merged" in `/td-commitcraft:plan-release`.

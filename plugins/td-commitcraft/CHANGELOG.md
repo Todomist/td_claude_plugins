@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- `review-commits` is back, with its script `review-commits.sh`, which the owner runs in a
+  terminal. Its rule on secrets no longer reads `.env` files: it never opens them and masks any
+  secret that shows up in output or a log. The **Review script** row can say `bundled` again.
 - README: install from `main` (`/plugin marketplace add Todomist/td_claude_plugins#main`), not
   from the default branch, which holds unreleased work.
 

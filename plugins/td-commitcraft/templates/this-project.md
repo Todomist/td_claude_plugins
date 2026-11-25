@@ -21,7 +21,7 @@ table.
 | Todos                  | The file with every item left for later                                    |
 | Release branch         | `main`, released versions only, tagged `v<version>`; notes in …, or `none` |
 | Extra planning rules   | A project file with planning rules on top of the plugin's, or `none`       |
-| Review script          | A script in this project, e.g. `.claude/scripts/review-commits.sh`         |
+| Review script          | `bundled` (the plugin's), or a path in this project                        |
 | Local review branch    | `todomist_local/<branch>` (local only, never pushed or merged)              |
 | Debug log prefix       | e.g. `vjconsole_<area>`                                                    |
 | Production             | What runs in production (database, hosting), or `none`                     |
