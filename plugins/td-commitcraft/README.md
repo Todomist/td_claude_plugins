@@ -46,8 +46,9 @@ is missing, the skills stop and ask for it. Template to copy:
 | Docs                   | commit-rules                                    | Where the docs on how the app works live                          |
 | Status                 | plan-release                                    | The short "where we are" file                                     |
 | Branch plan            | plan-release                                    | The file with the release's numbered branches                     |
-| Todos                  | plan-release, review-commits                    | The file with every item left for later                           |
-| Release branch         | plan-release                                    | The branch with released versions only, its tags, the notes       |
+| Todos                  | plan-release, review-commits                    | The file with every todo, open and done, in one table             |
+| Releases folder        | plan-release                                    | Where the status, plan and todos sit, and a folder per release    |
+| Release branch         | plan-release                                    | Its name, and the branches it merges into once the release is out |
 | Extra planning rules   | plan-release                                    | A project file with more planning rules                           |
 | Review script          | commit-rules, review-commits, rebuild-commits   | `bundled`, or a path in the project                               |
 | Local review branch    | commit-rules, rebuild-commits                   | The owner's local copy of a branch for reviewing                  |

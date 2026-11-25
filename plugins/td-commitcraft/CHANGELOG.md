@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- `plan-release` is the version finalised in our projects: the status, the branch plan (Now and
+  Next) and the todos sit at the top of the releases folder; the todos are one table with a Done
+  date; finishing touches picks what the release still needs; a release branch is cut from the
+  work branch, built and deployed, then merged into the branches the **Release branch** row
+  names; each shipped release gets its own version folder. New table row **Releases folder**;
+  the **Release branch** row now names the branch and where it merges.
 - `review-commits` is back, with its script `review-commits.sh`, which the owner runs in a
   terminal. Its rule on secrets no longer reads `.env` files: it never opens them and masks any
   secret that shows up in output or a log. The **Review script** row can say `bundled` again.
