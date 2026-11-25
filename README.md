@@ -6,7 +6,7 @@ extensions (commands, agents, hooks, MCP servers). Never a new repository per pl
 
 | Plugin                                 | Version | What it holds                                                    |
 | -------------------------------------- | ------- | ---------------------------------------------------------------- |
-| [workflow](plugins/workflow/README.md) | 1.0.0   | How we work in a project: plan, commit, review, rebuild, release |
+| [workflow](plugins/workflow/README.md) | 0.1.0   | How we work in a project: plan, commit, review, rebuild, release |
 
 Planned next: [.claude/todo.md](.claude/todo.md).
 
@@ -33,7 +33,7 @@ Planned next: [.claude/todo.md](.claude/todo.md).
    {
      "extraKnownMarketplaces": {
        "todomist": {
-         "source": { "source": "github", "repo": "<owner>/claude_plugins", "ref": "workflow-v1.0.0" }
+         "source": { "source": "github", "repo": "<owner>/claude_plugins", "ref": "workflow-v0.1.0" }
        }
      },
      "enabledPlugins": { "workflow@todomist": true }
@@ -47,7 +47,7 @@ Planned next: [.claude/todo.md](.claude/todo.md).
 
 ### Pin and upgrade
 
-- `ref` pins the marketplace to a tag (`workflow-v1.0.0`) or a full 40-character commit SHA.
+- `ref` pins the marketplace to a tag (`workflow-v0.1.0`) or a full 40-character commit SHA.
   Without `ref` the project follows the repository's default branch (`develop`).
 - The pin is for the whole repository: every plugin a project uses from here comes from that
   tag. Plugins don't depend on each other, so that is safe.
@@ -78,7 +78,7 @@ On one branch in that project, after the owner's "yes":
 
 ### Add a plugin
 
-1. `plugins/<name>/` with `.claude-plugin/plugin.json` (`name`, `version: "1.0.0"`,
+1. `plugins/<name>/` with `.claude-plugin/plugin.json` (`name`, `version: "0.1.0"`,
    `description`, `author`), `README.md`, `CHANGELOG.md` and its parts.
 2. One entry in `.claude-plugin/marketplace.json`:
    `{ "name": "<name>", "source": "./plugins/<name>", "description": "…" }`. No `version` there:

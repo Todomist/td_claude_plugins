@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0
+## 0.1.0
 
 - First version. Each skill is one wording, merged from the copies our projects kept in
   `.claude/skills/`: `commit-rules`, `review-commits` (with `review-commits.sh` bundled) and

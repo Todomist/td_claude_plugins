@@ -59,8 +59,10 @@ Project-only skills (for example a project's code rules) stay in the project, be
 ## Versions
 
 The version is in `.claude-plugin/plugin.json`; what changed is in [CHANGELOG.md](CHANGELOG.md).
+While it is `0.x` the rules are still settling:
 
-- **Major:** a skill is renamed or removed, or a table row is added or renamed (projects must
-  change something).
-- **Minor:** a new skill or a new rule that needs nothing from projects.
-- **Patch:** wording fixes.
+- **Minor** (0.1 → 0.2): any change to what the skills do, including a renamed or removed skill
+  or a changed table row.
+- **Patch** (0.1.0 → 0.1.1): wording fixes.
+- **1.0.0** once the rules are settled. From then on: major when projects must change something,
+  minor for a new skill or rule, patch for wording.
