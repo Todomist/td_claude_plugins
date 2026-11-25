@@ -10,8 +10,10 @@ Planned work: [.claude/todo.md](.claude/todo.md).
 - Keep it simple and short.
 - Git: work happens on `develop`, the default branch (or a branch, if the owner asks for one).
   `main` holds released versions only; the owner creates it, and it changes only through a
-  release (README, "Release a new version"). Never release, tag, push or merge unless asked. Never amend, reset or rewrite existing commits. Never add Claude as a
-  co-author.
+  release (README, "Release a new version"). Never release, tag, push or merge unless asked.
+  Never amend, reset or rewrite existing commits. Never add Claude as a co-author.
+- The Claude directory follows `main`: every push to `main` is a new version there, and it ends
+  any open appeal on the current one. Before pushing `main`, check todo R4.
 - Other projects are read only from here: a project changes only in its own repository, on its
   own branch.
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- README: install from `main` (`/plugin marketplace add Todomist/td_claude_plugins#main`), not
+  from the default branch, which holds unreleased work.
+
 ## 0.1.0
 
 - First version: `plan-release`, `commit-rules` and `rebuild-commits`. Each skill is one wording,

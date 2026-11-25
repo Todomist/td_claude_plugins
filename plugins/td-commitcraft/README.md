@@ -8,7 +8,8 @@ project's `.claude/how-we-work.md`.
 Install it for yourself:
 
 ```
-/plugin install td-commitcraft --marketplace Todomist/td_claude_plugins
+/plugin marketplace add Todomist/td_claude_plugins#main
+/plugin install td-commitcraft@todomist
 ```
 
 For a whole project, and to pin a version: the repository's [README](../../README.md).

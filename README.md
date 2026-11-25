@@ -25,8 +25,15 @@ Planned next: [.claude/todo.md](.claude/todo.md).
 
 ## Use a plugin in a project
 
-The repository is public, so installing needs no GitHub login. For yourself only:
-`/plugin install td-commitcraft --marketplace Todomist/td_claude_plugins`. For a whole project:
+The repository is public, so installing needs no GitHub login. For yourself only, from `main`
+(the default branch, `develop`, holds unreleased work):
+
+```
+/plugin marketplace add Todomist/td_claude_plugins#main
+/plugin install td-commitcraft@todomist
+```
+
+For a whole project:
 
 1. **In the project's `.claude/settings.json`** (committed, so everyone on the project gets it):
 
