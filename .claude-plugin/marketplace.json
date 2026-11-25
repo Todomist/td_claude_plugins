@@ -5,8 +5,8 @@
   "owner": { "name": "Viishesh Jain" },
   "plugins": [
     {
-      "name": "workflow",
-      "source": "./plugins/workflow",
+      "name": "td-workflow",
+      "source": "./plugins/td-workflow",
       "description": "How we work in a project: plan a release, commit, review and rebuild a branch, cut a release."
     }
   ]

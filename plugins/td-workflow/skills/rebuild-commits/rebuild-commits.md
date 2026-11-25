@@ -2,7 +2,7 @@
 
 Only when the owner asks. A big branch grows as work commits; before the commit-by-commit review
 it can be rebuilt into a clean sequence. During a review nothing is rewritten: changes go on top
-as new commits (code first, then docs). Every rebuilt commit follows `/workflow:commit-rules`.
+as new commits (code first, then docs). Every rebuilt commit follows `/td-workflow:commit-rules`.
 "The main branch" (`<main>` below), "the checks" and "the review script" mean the values in the
 **This project** table of `.claude/how-we-work.md`.
 
@@ -66,7 +66,7 @@ The branch keeps its name; the backup is the only extra branch.
    lost or changed: fix it before going on.
 6. **Hand over.** List the new commits, say the hashes changed, and remind the owner to recreate
    the local review branch and run the review script (base: the main branch). Then suggest
-   `/workflow:review-commits`.
+   `/td-workflow:review-commits`.
 
 If the rebuild goes wrong or stops half way, `git reset --hard backup/<branch>` puts the branch
 back exactly as it was.

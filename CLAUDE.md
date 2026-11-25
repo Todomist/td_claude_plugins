@@ -16,15 +16,16 @@ Planned work: [.claude/todo.md](.claude/todo.md).
 
 ## Rules for plugins
 
-- One folder per plugin, `plugins/<name>/`, with its own `plugin.json` version, `README.md` and
+- Every plugin is named `td-<name>`, so its name is unique in the Claude directory. One folder
+  per plugin, `plugins/td-<name>/`, with its own `plugin.json` version, `README.md` and
   `CHANGELOG.md`, plus one entry in `.claude-plugin/marketplace.json`.
 - Plugins never depend on each other and never use files outside their own folder.
 - Skills stay general: project values come from the project's **This project** table (the
-  `workflow` README is the contract). Project-only skills stay in their projects.
+  `td-workflow` README is the contract). Project-only skills stay in their projects.
 - A change projects should get raises that plugin's version, and only that plugin's, with a
   `CHANGELOG.md` entry. `version` lives in `plugin.json` only, never in the marketplace entry.
 - A skill points to its own files with `${CLAUDE_PLUGIN_ROOT}` in `SKILL.md`. The variable is
   replaced only in `SKILL.md`, not in the files it points to.
-- The repository will be public: no secrets, and no private details from our projects.
+- The repository is public: no secrets, and no private details from our projects.
 - Before every commit: `claude plugin validate . --strict` and
-  `claude plugin validate ./plugins/<name> --strict`.
+  `claude plugin validate ./plugins/td-<name> --strict`.

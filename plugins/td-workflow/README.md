@@ -1,4 +1,4 @@
-# workflow
+# td-workflow
 
 How we work in a project: plan a release in branches, plan and make commits, review a branch
 commit by commit, rebuild a branch's commits, and cut a release. The skills are general: each
@@ -8,10 +8,10 @@ one takes the project's own values from the **This project** table in the projec
 
 | Skill                       | When to use                                                                                       |
 | --------------------------- | ------------------------------------------------------------------------------------------------- |
-| `/workflow:plan-release`    | Planning a release or a branch, adding a todo, after a branch is merged, cutting a release         |
-| `/workflow:commit-rules`    | Before the first commit of a branch, when committing, and when finishing a branch                 |
-| `/workflow:review-commits`  | Reviewing a branch commit by commit: "explain", "next", "chk again", "review is done"              |
-| `/workflow:rebuild-commits` | Rebuilding a branch's commits into a clean sequence. Only on request: it rewrites history         |
+| `/td-workflow:plan-release`    | Planning a release or a branch, adding a todo, after a branch is merged, cutting a release         |
+| `/td-workflow:commit-rules`    | Before the first commit of a branch, when committing, and when finishing a branch                 |
+| `/td-workflow:review-commits`  | Reviewing a branch commit by commit: "explain", "next", "chk again", "review is done"              |
+| `/td-workflow:rebuild-commits` | Rebuilding a branch's commits into a clean sequence. Only on request: it rewrites history         |
 
 The usual order in the life of a branch:
 
@@ -52,7 +52,7 @@ Project-only skills (for example a project's code rules) stay in the project, be
 ## Bundled files
 
 - `skills/review-commits/review-commits.sh`: the review script. The owner runs it in a terminal;
-  `/workflow:review-commits` gives the full command, because the installed path changes with
+  `/td-workflow:review-commits` gives the full command, because the installed path changes with
   each version.
 - `templates/this-project.md`: the table template.
 

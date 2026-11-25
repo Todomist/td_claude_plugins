@@ -13,4 +13,4 @@ If the project has no **This project** table, stop and ask the owner to add one 
 
 - Show a plan in the chat first. Change the branch plan, the todos or the status file only after
   the owner's "yes".
-- Commits inside a branch are `/workflow:commit-rules`.
+- Commits inside a branch are `/td-workflow:commit-rules`.

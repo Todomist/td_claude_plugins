@@ -90,4 +90,4 @@ The review is a discussion, not a tour. Claude:
 5. After the changes: run the checks, then the owner reviews the new commits the same way.
 
 Rebuilding a branch's commits into a clean sequence is its own skill,
-`/workflow:rebuild-commits`, and runs only when the owner asks.
+`/td-workflow:rebuild-commits`, and runs only when the owner asks.

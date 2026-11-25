@@ -1,5 +1,5 @@
 {
-  "name": "workflow",
+  "name": "td-workflow",
   "version": "0.1.0",
   "description": "How we work in a project: plan a release in branches, plan and make commits, review a branch commit by commit, rebuild its commits, and cut a release. Project values come from the This project table in .claude/how-we-work.md.",
   "author": { "name": "Viishesh Jain" }

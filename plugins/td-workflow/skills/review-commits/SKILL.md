@@ -18,5 +18,5 @@ If the project has no **This project** table, stop and ask the owner to add one 
 - While the review runs the repo is on a detached HEAD: change nothing (files, commits,
   database, memory) and make no paid service calls.
 - On every "explain", "next" or "chk again", find the staged commit again as section 2 says.
-- If the owner wants the branch's commits rebuilt, that is `/workflow:rebuild-commits`: suggest
+- If the owner wants the branch's commits rebuilt, that is `/td-workflow:rebuild-commits`: suggest
   it, don't start it yourself.
