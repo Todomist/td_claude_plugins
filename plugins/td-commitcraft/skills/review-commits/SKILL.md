@@ -8,8 +8,8 @@ full and follow it for the rest of this chat. The project's values (work branch,
 production, paid services, examples) are in the **This project** table of
 `.claude/how-we-work.md`.
 
-If the project has no **This project** table, stop and ask the owner to add one (template:
-`${CLAUDE_PLUGIN_ROOT}/templates/this-project.md`).
+If the project has no `.claude/how-we-work.md`, or it has no **This project** table, stop and
+ask the owner to add it from the template: `${CLAUDE_PLUGIN_ROOT}/templates/how-we-work.md`.
 
 - The owner runs the review script themselves. Unless the table names another one, it is the
   script beside this file. Give the owner the command with the work branch as the base (a start

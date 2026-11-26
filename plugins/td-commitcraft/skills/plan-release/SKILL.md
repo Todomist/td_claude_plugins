@@ -8,8 +8,8 @@ and follow it. The project's own values (work branch, run it, status, branch pla
 releases folder, release branch, extra planning rules) are in the **This project** table of
 `.claude/how-we-work.md`.
 
-If the project has no **This project** table, stop and ask the owner to add one (template:
-`${CLAUDE_PLUGIN_ROOT}/templates/this-project.md`).
+If the project has no `.claude/how-we-work.md`, or it has no **This project** table, stop and
+ask the owner to add it from the template: `${CLAUDE_PLUGIN_ROOT}/templates/how-we-work.md`.
 
 - Show a plan in the chat first. Change the branch plan, the todos or the status file only after
   the owner's "yes".

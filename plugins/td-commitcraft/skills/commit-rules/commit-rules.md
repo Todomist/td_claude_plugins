@@ -28,6 +28,10 @@ checks" or "the review script" mean the values in its **This project** table.
   code at that commit still uses.
 - **Tests go in the same commit** as the code they test, written while building that piece, not
   in a tests commit at the end. Each commit passes the checks on its own.
+- **Right before every commit and every merge,** run `git branch --show-current`. If it is not
+  the branch being worked on, change nothing: list the changes, ask the owner to switch, and
+  wait. Never switch it yourself.
+- **Commit only after the checks pass:** chain them, e.g. `<checks> && git commit …`.
 - **Subject:** a short, to-the-point conventional subject (`feat:`, `fix:`, `docs:`…) that names
   everything the commit holds; code is never titled `docs:`. **Body:** 3 lines at most, no long
   descriptions.
@@ -56,5 +60,6 @@ checks" or "the review script" mean the values in its **This project** table.
    the branch (the **Local review branch** row: local only, never pushed or merged), and give
    them the review script command to run themselves (base: the work branch). Then follow
    `/td-commitcraft:review-commits` as they move through the commits.
-5. After "approved, merge": merge into the work branch with `--no-ff`. Then follow "After a
-   branch is merged" in `/td-commitcraft:plan-release`.
+5. After "approved, merge": check the branch (above), write the merge message to a file and run
+   `git merge --no-ff -F <file>` into the work branch. Then follow "After a branch is merged" in
+   `/td-commitcraft:plan-release`.

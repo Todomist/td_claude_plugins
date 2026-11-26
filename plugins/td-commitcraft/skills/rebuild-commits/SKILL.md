@@ -8,8 +8,8 @@ full and follow its steps in order. Also load `/td-commitcraft:commit-rules` if 
 rebuilt commit must follow it. The project's values (work branch, checks, local review branch,
 review script) are in the **This project** table of `.claude/how-we-work.md`.
 
-If the project has no **This project** table, stop and ask the owner to add one (template:
-`${CLAUDE_PLUGIN_ROOT}/templates/this-project.md`).
+If the project has no `.claude/how-we-work.md`, or it has no **This project** table, stop and
+ask the owner to add it from the template: `${CLAUDE_PLUGIN_ROOT}/templates/how-we-work.md`.
 
 - This rewrites the branch's history, so it runs only when the owner asked for it.
 - Step 1 is a plan table. Change nothing until the owner types "yes".

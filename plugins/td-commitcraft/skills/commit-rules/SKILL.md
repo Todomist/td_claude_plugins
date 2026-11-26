@@ -8,8 +8,8 @@ and follow it. The project's values (work branch, branch names, checks, run it, 
 services, local review branch, review script, log prefix) are in the **This project** table of
 `.claude/how-we-work.md`.
 
-If the project has no **This project** table, stop and ask the owner to add one (template:
-`${CLAUDE_PLUGIN_ROOT}/templates/this-project.md`).
+If the project has no `.claude/how-we-work.md`, or it has no **This project** table, stop and
+ask the owner to add it from the template: `${CLAUDE_PLUGIN_ROOT}/templates/how-we-work.md`.
 
 Before the first commit of a branch, tell the owner how many commits it needs and what each
 holds, and wait for "yes".

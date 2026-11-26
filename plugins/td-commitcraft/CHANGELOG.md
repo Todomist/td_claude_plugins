@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2
+
+- The basics the skills rely on now ship with the plugin: `templates/how-we-work.md` (plan first,
+  ask first, git basics, explaining, honesty, the This project table, which skill when) replaces
+  `templates/this-project.md`. Every skill stops and asks for `.claude/how-we-work.md` and its
+  table when either is missing.
+- `commit-rules`: check the branch with `git branch --show-current` right before every commit
+  and merge, and stop if it is not the branch being worked on; commit only after the checks
+  pass; merge with `git merge --no-ff -F <file>`.
+
 ## 0.1.1
 
 - Versions: every push raises the version and gets a tag, `td-commitcraft-v<version>`, which

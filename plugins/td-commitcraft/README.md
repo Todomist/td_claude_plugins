@@ -9,7 +9,7 @@ project's `.claude/how-we-work.md`.
 Install it for yourself:
 
 ```
-/plugin marketplace add Todomist/td_claude_plugins#td-commitcraft-v0.1.1
+/plugin marketplace add Todomist/td_claude_plugins#td-commitcraft-v0.1.2
 /plugin install td-commitcraft@todomist
 ```
 
@@ -31,11 +31,14 @@ The usual order in the life of a branch:
 5. Reviewing → `review-commits`
 6. After the merge → `plan-release` (status, plan row, todos; a release when it is time)
 
-## The contract: the "This project" table
+## The contract: `.claude/how-we-work.md`
 
-Every row must be in the project's table; write `none` when it does not apply yet. If the table
-is missing, the skills stop and ask for it. Template to copy:
-[templates/this-project.md](templates/this-project.md).
+Every project has a `.claude/how-we-work.md`, copied from
+[templates/how-we-work.md](templates/how-we-work.md) and loaded in every chat from `CLAUDE.md`. It
+holds the basics the skills rely on and never repeat (plan first, ask first, git basics,
+explaining, honesty) and the **This project** table below. Every row must be in the table; write
+`none` when it does not apply yet. If the file or the table is missing, the skills stop and ask
+for it.
 
 | Row                    | Read by                                         | What it holds                                                     |
 | ---------------------- | ----------------------------------------------- | ----------------------------------------------------------------- |
@@ -69,7 +72,7 @@ skills are instructions for Claude. Privacy: [PRIVACY.md](PRIVACY.md).
   with each version). It uses git on the current repository only: it refuses to start with
   uncommitted changes, checks out the branch's commits one at a time, discards edits made while
   reviewing when it moves on, and returns to the branch at the end. It never pushes.
-- `templates/this-project.md` is the table template.
+- `templates/how-we-work.md` is the template for the project's `.claude/how-we-work.md`.
 
 ## Versions
 
