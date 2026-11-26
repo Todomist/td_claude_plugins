@@ -9,7 +9,7 @@ every chat; the skills are general and take the project's own values from its
 Install it for yourself:
 
 ```
-/plugin marketplace add Todomist/td_claude_plugins#td-commitcraft-v0.1.4
+/plugin marketplace add Todomist/td_claude_plugins#td-commitcraft-v0.1.5
 /plugin install td-commitcraft@todomist
 ```
 

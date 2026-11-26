@@ -8,7 +8,7 @@ writes `.claude/td-codecraft/map.md`, what an existing project contains and wher
 Install it for yourself:
 
 ```
-/plugin marketplace add Todomist/td_claude_plugins#td-codecraft-v0.1.1
+/plugin marketplace add Todomist/td_claude_plugins#td-codecraft-v0.1.2
 /plugin install td-codecraft@todomist
 ```
 

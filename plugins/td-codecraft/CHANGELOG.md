@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.2
 
 - `init` searches the project for what the shared rules forbid or allow only as a recorded
   decision (a JSON column, a state library, money as floats…) and proposes a Decisions row for

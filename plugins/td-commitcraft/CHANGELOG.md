@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.5
 
 - A **This branch** block at the start of every chat (`hooks/session-start.sh`): the current
   branch and whether the tree is clean, then on the work branch the steps to start a branch, on
