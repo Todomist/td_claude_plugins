@@ -26,6 +26,9 @@ exist.
   the chat, never into the file.
 - Keep it short: one line per item. Anything longer belongs in the project's docs, linked from the
   map.
+- Don't repeat a list the project already keeps. When its docs already list the tables, the
+  routes or the docs (an index file such as `docs/db/README.md`), link that file under Data, API
+  or Docs in one line instead. One line per item only where no such list exists.
 
 ## 3. Write after "yes"
 

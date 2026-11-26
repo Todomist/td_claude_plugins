@@ -22,18 +22,29 @@ Nothing is written until the owner says "yes" to the full text of both files.
     `stack.md`, as a Stack or Conventions row, an approved library, or a decision;
   - **a rule only this project has**: into the project's `code-rules.md`, under the same section.
 
-## 2. Ask, in one round
+## 2. What the project already does differently
+
+The plugin's rules (`${CLAUDE_PLUGIN_ROOT}/skills/code-rules/code-rules.md`) forbid some things
+and allow others only as a recorded decision. Search the project for each one that already
+exists, for example: a JSON or JSONB column in the migrations, a state library or a schema
+library in the package files, money in a `numeric`, `real`, `float` or `double` column, a time
+column that is not `timestamptz`, number ids (`serial`, `integer` keys) instead of `uuid`, rows
+removed with `DELETE`, raw colours or sizes in components. Propose one Decisions row for each,
+naming the file it was found in, so an existing project is not "wrong" on its first day. The
+owner keeps, changes or drops each row.
+
+## 3. Ask, in one round
 
 Ask only what you could not find, each with a suggested answer: language, runtime, repository
 layout, shared package, database and migrations folder, API, app, tests, format and lint,
 hosting, outside services; the conventions (owner column, money unit, time zone, phone numbers,
 server secrets file, client app names); the approved libraries.
 
-## 3. Show, then write after "yes"
+## 4. Show, then write after "yes"
 
 - `.claude/td-codecraft/stack.md` and `.claude/td-codecraft/code-rules.md`, from
-  `${CLAUDE_PLUGIN_ROOT}/templates/`. The choices made now go into Decisions as D1, D2… with
-  today's date, written `26 Nov 2026`.
+  `${CLAUDE_PLUGIN_ROOT}/templates/`. The choices made now, and the rows the owner kept from
+  step 2, go into Decisions as D1, D2… with today's date, written `26 Nov 2026`.
 - An older `.claude/skills/code-rules/`: propose deleting it once its rules have moved, and
   renaming `/code-rules` to `/td-codecraft:code-rules` where the project mentions it. The owner
   decides.

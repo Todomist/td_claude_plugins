@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/essentials.md\"; s=\"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/td-codecraft/stack.md\"; if [ ! -f \"$s\" ]; then echo; echo \"This project has no .claude/td-codecraft/stack.md yet: suggest /td-codecraft:init.\"; fi"
+            "command": "v=$(sed -n 's/.*\"version\": *\"\\([^\"]*\\)\".*/\\1/p' \"${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json\" | head -n 1); echo \"td-codecraft ${v:-?}, loaded at the start of this chat.\"; echo; cat \"${CLAUDE_PLUGIN_ROOT}/essentials.md\"; s=\"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/td-codecraft/stack.md\"; if [ ! -f \"$s\" ]; then echo; echo \"This project has no .claude/td-codecraft/stack.md yet: suggest /td-codecraft:init.\"; fi"
           }
         ]
       }

@@ -23,10 +23,14 @@ Mapped: <date>, at commit `<sha>`.
 
 ## Data
 
+<If the project's docs already list the tables, link that file here instead of this table.>
+
 | Table | What it holds | Owner |
 | ----- | ------------- | ----- |
 
 ## API
+
+<If the project's docs already list the routes, link that file here instead of this table.>
 
 | Route | What it does | Feature |
 | ----- | ------------ | ------- |
@@ -42,6 +46,8 @@ Mapped: <date>, at commit `<sha>`.
 | ------- | -------- | --------- | ---- |
 
 ## Docs
+
+<If the docs have an index file, link it here instead of this table.>
 
 | Doc | What it covers |
 | --- | -------------- |

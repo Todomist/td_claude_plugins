@@ -34,9 +34,10 @@ For a whole project, and to pin a version: the repository's [README](../../READM
 No MCP servers, no scripts, no network access, and it stores no data. The skills are
 instructions for Claude. Privacy: [PRIVACY.md](PRIVACY.md).
 
-- A `SessionStart` hook (`hooks/hooks.json`) prints `essentials.md` at the start of every chat
-  (when to suggest these skills), and a one-line note when the project has no `stack.md` yet,
-  with `cat`. It reads nothing else and writes nothing.
+- A `SessionStart` hook (`hooks/hooks.json`, a one-line command, no script file) prints, at the
+  start of every chat: the plugin's name and version (from `plugin.json`), `essentials.md` (when
+  to suggest these skills), and a one-line note when the project has no `stack.md` yet. It reads
+  nothing else and writes nothing.
 
 ## Versions
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- `init` searches the project for what the shared rules forbid or allow only as a recorded
+  decision (a JSON column, a state library, money as floats…) and proposes a Decisions row for
+  each one that already exists, with its file.
+- `map` links a list the project's docs already keep (the tables, the routes, a docs index)
+  instead of repeating every item.
+- The start of every chat names the plugin and its version.
+
 ## 0.1.1
 
 - New `map`: writes or refreshes `.claude/td-codecraft/map.md`, what an existing project
