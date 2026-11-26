@@ -25,11 +25,12 @@ Planned next: [.claude/todo.md](.claude/todo.md).
 
 ## Use a plugin in a project
 
-The repository is public, so installing needs no GitHub login. For yourself only, from `main`
-(the default branch, `develop`, holds unreleased work):
+The repository is public, so installing needs no GitHub login. For now we install from
+`develop`, the up-to-date version (`main` stays frozen while the directory appeal is open: todo
+R4). For yourself only:
 
 ```
-/plugin marketplace add Todomist/td_claude_plugins#main
+/plugin marketplace add Todomist/td_claude_plugins#develop
 /plugin install td-commitcraft@todomist
 ```
 
@@ -41,7 +42,7 @@ For a whole project:
    {
      "extraKnownMarketplaces": {
        "todomist": {
-         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "main" }
+         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "develop" }
        }
      },
      "enabledPlugins": { "td-commitcraft@todomist": true }
@@ -55,9 +56,10 @@ For a whole project:
 
 ### Pin and upgrade
 
-- `"ref": "main"` follows released versions only, because `main` changes only through a release.
-  Without `ref` the project follows `develop`, the default branch, which holds unreleased work.
-  We don't use tags; to stay on one exact release, `ref` can be its full 40-character commit SHA.
+- For now, `"ref": "develop"`: the up-to-date version, while `main` stays frozen for the
+  directory appeal (todo R4). Once releases go to `main` again, projects switch to
+  `"ref": "main"`, which changes only through a release.
+- We don't use tags; to stay on one exact commit, `ref` can be its full 40-character SHA.
 - The `ref` is for the whole repository: every plugin a project uses from here comes from it.
   Plugins don't depend on each other, so that is safe.
 - Auto-update is off for our marketplace: nothing changes until the project updates. To get the
@@ -107,4 +109,5 @@ without the owner's explicit "yes". We don't use tags.
    CHANGELOG, and update the table at the top.
 3. Merge into `main` with `--no-ff`, then push `main`.
 4. The Claude directory follows `main`: publish the new version in the developer portal.
-   Projects following `main` get it when they run `claude plugin marketplace update todomist`.
+   Projects following `main` get it when they run `claude plugin marketplace update todomist`
+   (for now projects follow `develop`: see "Pin and upgrade").

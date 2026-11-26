@@ -11,8 +11,8 @@
 - `review-commits` is back, with its script `review-commits.sh`, which the owner runs in a
   terminal. It may read `.env` files and logs during a review. The **Review script** row can say
   `bundled` again.
-- README: install from `main` (`/plugin marketplace add Todomist/td_claude_plugins#main`), not
-  from the default branch, which holds unreleased work.
+- README: install from `develop` for now (`/plugin marketplace add Todomist/td_claude_plugins#develop`),
+  the up-to-date version, while `main` stays frozen for the directory appeal.
 
 ## 0.1.0
 

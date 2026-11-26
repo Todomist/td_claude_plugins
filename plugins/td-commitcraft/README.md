@@ -9,7 +9,7 @@ project's `.claude/how-we-work.md`.
 Install it for yourself:
 
 ```
-/plugin marketplace add Todomist/td_claude_plugins#main
+/plugin marketplace add Todomist/td_claude_plugins#develop
 /plugin install td-commitcraft@todomist
 ```
 

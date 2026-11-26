@@ -5,7 +5,8 @@ changes. A row leaves this file when it is built.
 
 **Status, 2026-11-26:** `td-commitcraft` 0.1.0 is on `main` and installs from GitHub. Its Claude
 directory listing waits on appeal CASE-7C3E6841 (R4), and the Verified request on Anthropic (R5).
-Check both on **2026-12-10**. Until R4 is decided, don't push `main`; work goes on on `develop`.
+Check both on **2026-12-10**. Until R4 is decided, don't push `main`; work goes on on `develop`, and
+projects install from `develop` (`"ref": "develop"`). After the next release to `main`, they switch back to `"ref": "main"`.
 
 | Column   | Meaning                                                                         |
 | -------- | ------------------------------------------------------------------------------- |
