@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- New `init`: sets up a project, or moves one onto the plugin. It asks for the project's own
+  rules and the This project values, writes `.claude/td-commitcraft/project.md` and the releases
+  folder, and moves an older `.claude/how-we-work.md` across.
+- New `start-branch`: "work on feature #7" reads the plan row, its todos, the status file and the
+  project's stack, shows the scope, the open questions and the commit plan, and creates the
+  branch after the owner's "yes".
 - The basics (plan first, ask first, git basics, explaining, honesty, which skill when) load in
   every chat from the plugin: a `SessionStart` hook prints `essentials.md` and the project's
   `.claude/td-commitcraft/project.md`. The project's file holds only its own rules, the This

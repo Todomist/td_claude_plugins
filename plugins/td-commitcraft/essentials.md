@@ -58,6 +58,8 @@ skills are listed in its `project.md`.
 
 | Point in the work                                                                                        | Skill                             |
 | -------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| Starting a project, or moving one onto this plugin                                                       | `/td-commitcraft:init`            |
+| Starting work on a branch or a feature from the plan ("work on feature #7")                              | `/td-commitcraft:start-branch`    |
 | Planning a release or a branch, adding or closing a todo, a branch merged, cutting or shipping a release | `/td-commitcraft:plan-release`    |
 | Before the first commit of a branch, when committing, and when finishing a branch                        | `/td-commitcraft:commit-rules`    |
 | The owner reviews a branch ("explain", "next", "chk again", "review is done", the review script)         | `/td-commitcraft:review-commits`  |

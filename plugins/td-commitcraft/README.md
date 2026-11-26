@@ -17,6 +17,8 @@ For a whole project, and to pin a version: the repository's [README](../../READM
 
 | Skill                             | When to use                                                                                |
 | --------------------------------- | ------------------------------------------------------------------------------------------ |
+| `/td-commitcraft:init`            | Starting a project, or moving one onto the plugin: writes `.claude/td-commitcraft/project.md` |
+| `/td-commitcraft:start-branch`    | Starting work on a branch from the plan: "work on feature #7"                              |
 | `/td-commitcraft:plan-release`    | Planning a release or a branch, adding a todo, after a branch is merged, cutting a release |
 | `/td-commitcraft:commit-rules`    | Before the first commit of a branch, when committing, and when finishing a branch          |
 | `/td-commitcraft:review-commits`  | Reviewing a branch commit by commit: "explain", "next", "chk again", "review is done"      |
@@ -24,7 +26,8 @@ For a whole project, and to pin a version: the repository's [README](../../READM
 
 The usual order in the life of a branch:
 
-1. Planning the release or the branch → `plan-release`; its commits → `commit-rules`
+1. Once per project → `init`. Planning the release → `plan-release`; starting a branch from the
+   plan → `start-branch`; its commits → `commit-rules`
 2. Building → the project's own code rules
 3. Finishing the branch → `commit-rules` (end-of-branch steps)
 4. History messy → `rebuild-commits` (only on request)
