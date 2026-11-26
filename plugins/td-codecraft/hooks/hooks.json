@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/essentials.md\"; s=\"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/td-codecraft/stack.md\"; if [ ! -f \"$s\" ]; then echo; echo \"This project has no .claude/td-codecraft/stack.md yet: suggest /td-codecraft:init.\"; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

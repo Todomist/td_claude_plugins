@@ -1,0 +1,15 @@
+{
+  "name": "td-codecraft",
+  "displayName": "TD Codecraft",
+  "version": "0.1.0",
+  "description": "How we write code, and a record of every tech decision: init asks about a project's stack and writes .claude/td-codecraft/stack.md, decide keeps it current, and code-rules gives one set of rules for the code, the database, the API and the app, on top of the project's own.",
+  "author": { "name": "Todomist" },
+  "keywords": ["code-rules", "stack", "decisions", "typescript", "postgresql"],
+  "homepage": "https://github.com/Todomist/td_claude_plugins/tree/main/plugins/td-codecraft",
+  "repository": "https://github.com/Todomist/td_claude_plugins",
+  "documentationUrl": "https://github.com/Todomist/td_claude_plugins/blob/main/plugins/td-codecraft/README.md",
+  "supportUrl": "https://github.com/Todomist/td_claude_plugins/issues",
+  "privacyPolicyUrl": "https://github.com/Todomist/td_claude_plugins/blob/main/plugins/td-codecraft/PRIVACY.md",
+  "license": "MIT",
+  "network": { "hosts": [] }
+}
