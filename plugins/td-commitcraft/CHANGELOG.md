@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.3
 
 - New `init`: sets up a project, or moves one onto the plugin. It asks for the project's own
   rules and the This project values, writes `.claude/td-commitcraft/project.md` and the releases

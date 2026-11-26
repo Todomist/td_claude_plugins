@@ -6,7 +6,7 @@ extensions (commands, agents, hooks, MCP servers). Never a new repository per pl
 
 | Plugin                                 | Version | What it holds                                                    |
 | -------------------------------------- | ------- | ---------------------------------------------------------------- |
-| [td-commitcraft](plugins/td-commitcraft/README.md) | 0.1.2   | How we work in a project: plan, commit, review, rebuild, release |
+| [td-commitcraft](plugins/td-commitcraft/README.md) | 0.1.3   | How we work in a project: plan, commit, review, rebuild, release |
 | [td-codecraft](plugins/td-codecraft/README.md)     | 0.1.0   | How we write code: the stack, its decisions, the code rules      |
 
 Planned next: [.claude/todo.md](.claude/todo.md).
@@ -31,7 +31,7 @@ The repository is public, so installing needs no GitHub login. Every version has
 (GitHub → Tags) serves every plugin from here. For yourself only:
 
 ```
-/plugin marketplace add Todomist/td_claude_plugins#td-commitcraft-v0.1.2
+/plugin marketplace add Todomist/td_claude_plugins#td-commitcraft-v0.1.3
 /plugin install td-commitcraft@todomist
 /plugin install td-codecraft@todomist
 ```
@@ -44,7 +44,7 @@ For a whole project:
    {
      "extraKnownMarketplaces": {
        "todomist": {
-         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "td-commitcraft-v0.1.2" }
+         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "td-commitcraft-v0.1.3" }
        }
      },
      "enabledPlugins": { "td-commitcraft@todomist": true, "td-codecraft@todomist": true }
@@ -64,7 +64,7 @@ For a whole project:
 
 ### Pin and upgrade
 
-- Projects pin `ref` to a version tag, `<plugin>-v<version>` (e.g. `td-commitcraft-v0.1.2`). A
+- Projects pin `ref` to a version tag, `<plugin>-v<version>` (e.g. `td-commitcraft-v0.1.3`). A
   tag never moves, so the project stays on exactly that version until it changes the tag.
 - The `ref` is for the whole repository: every plugin a project uses from here comes from it.
   Plugins don't depend on each other, so that is safe.
@@ -118,7 +118,7 @@ its own tag. Nothing is pushed or tagged without the owner's explicit "yes".
 2. Before the push: raise only that plugin's `version` in its `plugin.json` (patch for changes
    to existing skills; minor or major as the plugin's README says), turn **Unreleased** into
    that version in the CHANGELOG, and update the table at the top.
-3. Commit, tag the commit `<plugin>-v<version>` (e.g. `td-commitcraft-v0.1.2`), then push
+3. Commit, tag the commit `<plugin>-v<version>` (e.g. `td-commitcraft-v0.1.3`), then push
    `develop` and the tag. A tag never moves or gets deleted.
 4. Move the marketplace on this machine to the new tag, so projects can fetch it.
    `claude plugin marketplace update todomist` alone keeps the old tag:
