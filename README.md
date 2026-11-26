@@ -1,12 +1,13 @@
 # Claude Code plugins
 
 Our one marketplace for Claude Code plugins. Every plugin lives here, in its own folder, with
-its own version: today `td-commitcraft`; later more plugins, new versions and other kinds of
+its own version: today `td-commitcraft` and `td-codecraft`; later more plugins, new versions and other kinds of
 extensions (commands, agents, hooks, MCP servers). Never a new repository per plugin.
 
 | Plugin                                 | Version | What it holds                                                    |
 | -------------------------------------- | ------- | ---------------------------------------------------------------- |
 | [td-commitcraft](plugins/td-commitcraft/README.md) | 0.1.2   | How we work in a project: plan, commit, review, rebuild, release |
+| [td-codecraft](plugins/td-codecraft/README.md)     | 0.1.0   | How we write code: the stack, its decisions, the code rules      |
 
 Planned next: [.claude/todo.md](.claude/todo.md).
 
@@ -26,11 +27,13 @@ Planned next: [.claude/todo.md](.claude/todo.md).
 ## Use a plugin in a project
 
 The repository is public, so installing needs no GitHub login. Every version has a tag,
-`<plugin>-v<version>`; use the latest (GitHub → Tags). For yourself only:
+`<plugin>-v<version>`. A `ref` is for the whole repository, so the newest tag of any plugin
+(GitHub → Tags) serves every plugin from here. For yourself only:
 
 ```
 /plugin marketplace add Todomist/td_claude_plugins#td-commitcraft-v0.1.2
 /plugin install td-commitcraft@todomist
+/plugin install td-codecraft@todomist
 ```
 
 For a whole project:
@@ -44,16 +47,20 @@ For a whole project:
          "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "td-commitcraft-v0.1.2" }
        }
      },
-     "enabledPlugins": { "td-commitcraft@todomist": true }
+     "enabledPlugins": { "td-commitcraft@todomist": true, "td-codecraft@todomist": true }
    }
    ```
 
 2. **Once per clone:** open the project in Claude Code, trust the folder, then run
-   `claude plugin install td-commitcraft@todomist --scope project`.
+   `claude plugin install td-commitcraft@todomist --scope project` and the same for
+   `td-codecraft@todomist`.
 3. **Run `/td-commitcraft:init`:** it asks for the project's own rules and the This project
    values and writes `.claude/td-commitcraft/project.md`
    ([template](plugins/td-commitcraft/templates/project.md)) and the releases folder. The plugin
    loads its basics and `project.md` in every chat: `CLAUDE.md` needs no line for either.
+4. **Run `/td-codecraft:init`:** it asks what the project is built with and writes
+   `.claude/td-codecraft/stack.md` and the project's own `.claude/td-codecraft/code-rules.md`
+   ([templates](plugins/td-codecraft/templates/)).
 
 ### Pin and upgrade
 
@@ -77,8 +84,13 @@ On one branch in that project, after the owner's "yes":
    own skills from `.claude/how-we-work.md` into `.claude/td-commitcraft/project.md`. Then delete
    `.claude/how-we-work.md` and its line in `CLAUDE.md`: the plugin loads the basics itself.
    Rename the skills to `/td-commitcraft:…` in `.claude/skills/README.md` and `CLAUDE.md`.
-4. In a new chat: `/td-commitcraft:commit-rules` loads, and `/td-commitcraft:review-commits` gives
-   the review script's full path.
+4. Run `/td-codecraft:init`: it sorts every rule of the old `.claude/skills/code-rules/` into
+   dropped (the plugin has it), `stack.md` (a choice or a value) or the project's own
+   `code-rules.md`, so nothing is lost. Then delete `.claude/skills/code-rules/` and rename
+   `/code-rules` to `/td-codecraft:code-rules` where the project mentions it.
+5. In a new chat: the basics and `project.md` are loaded, `/td-commitcraft:commit-rules` and
+   `/td-codecraft:code-rules` load, and `/td-commitcraft:review-commits` gives the review script's
+   full path.
 
 ## Work on this repository
 

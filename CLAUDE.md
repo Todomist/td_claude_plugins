@@ -24,7 +24,7 @@ Planned work: [.claude/todo.md](.claude/todo.md).
   `CHANGELOG.md`, plus one entry in `.claude-plugin/marketplace.json`.
 - Plugins never depend on each other and never use files outside their own folder.
 - Skills stay general: project values come from the project's **This project** table (the
-  `td-commitcraft` README is the contract). Project-only skills stay in their projects.
+  plugin's README describes its contract). Project-only skills stay in their projects.
 - Every push of `develop` that changes a plugin's folder is a new version of that plugin: raise
   its version (patch for changes to existing skills), turn its CHANGELOG's Unreleased into it,
   tag `<plugin>-v<version>`, and push `develop` and the tag. Then move this machine's marketplace

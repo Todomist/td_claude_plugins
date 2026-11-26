@@ -2,12 +2,19 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "todomist",
   "description": "Our Claude Code plugins, one folder each under plugins/.",
-  "owner": { "name": "Todomist" },
+  "owner": {
+    "name": "Todomist"
+  },
   "plugins": [
     {
       "name": "td-commitcraft",
       "source": "./plugins/td-commitcraft",
       "description": "Plan a release in branches, make and review commits, rebuild a branch's history, and release from develop to main."
+    },
+    {
+      "name": "td-codecraft",
+      "source": "./plugins/td-codecraft",
+      "description": "How we write code: the stack and its decisions in stack.md, and one set of code rules on top of the project's own."
     }
   ]
 }
