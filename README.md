@@ -120,8 +120,11 @@ its own tag. Nothing is pushed or tagged without the owner's explicit "yes".
    that version in the CHANGELOG, and update the table at the top.
 3. Commit, tag the commit `<plugin>-v<version>` (e.g. `td-commitcraft-v0.1.3`), then push
    `develop` and the tag. A tag never moves or gets deleted.
-4. Move the marketplace on this machine to the new tag, so projects can fetch it.
-   `claude plugin marketplace update todomist` alone keeps the old tag:
+4. Move the marketplace on this machine to the new tag, so projects can fetch it. It is
+   declared in `~/.claude/settings.json` (`extraKnownMarketplaces.todomist`): set its `ref` to the
+   new tag there first, then add it from exactly that source. `claude plugin marketplace update
+   todomist` alone keeps the old tag, and `add` with another tag is refused while the entry
+   differs:
 
    ```
    claude plugin marketplace add "Todomist/td_claude_plugins#<plugin>-v<version>"
