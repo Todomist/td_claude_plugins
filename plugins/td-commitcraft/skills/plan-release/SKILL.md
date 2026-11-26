@@ -5,11 +5,12 @@ description: How a release is planned in numbered branches and how each branch i
 
 Read `plan-release.md` in this folder (`${CLAUDE_PLUGIN_ROOT}/skills/plan-release/`) in full
 and follow it. The project's own values (work branch, run it, status, branch plan, todos,
-releases folder, release branch, extra planning rules) are in the **This project** table of
-`.claude/how-we-work.md`.
+releases folder, release branch) are in the **This project** table of
+`.claude/td-commitcraft/project.md`. If `.claude/td-commitcraft/plan-release.md` exists, read it too:
+the project's own rules for this skill, which win where they differ.
 
-If the project has no `.claude/how-we-work.md`, or it has no **This project** table, stop and
-ask the owner to add it from the template: `${CLAUDE_PLUGIN_ROOT}/templates/how-we-work.md`.
+If the project has no `.claude/td-commitcraft/project.md` with a **This project** table, stop
+and suggest `/td-commitcraft:init`.
 
 - Show a plan in the chat first. Change the branch plan, the todos or the status file only after
   the owner's "yes".

@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/essentials.md\"; p=\"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/td-commitcraft/project.md\"; echo; if [ -f \"$p\" ]; then cat \"$p\"; else echo \"This project has no .claude/td-commitcraft/project.md yet: suggest /td-commitcraft:init.\"; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

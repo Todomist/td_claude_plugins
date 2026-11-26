@@ -2,8 +2,9 @@
 
 How commits are planned, sized, ordered and named, and what happens at the end of a branch. The
 basics (one branch at a time, never push or merge unasked, never rewrite commits, no co-author)
-are in `.claude/how-we-work.md` and are not repeated here. Words like "the work branch", "the
-checks" or "the review script" mean the values in its **This project** table.
+load in every chat from the plugin and are not repeated here. Words like "the work branch", "the
+checks" or "the review script" mean the values in the **This project** table of
+`.claude/td-commitcraft/project.md`.
 
 ## Branches
 

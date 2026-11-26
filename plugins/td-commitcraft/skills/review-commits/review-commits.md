@@ -2,9 +2,9 @@
 
 How a commit-by-commit review chat works. Claude follows this whenever the owner reviews a branch
 (says "explain", "next", "chk again", or runs the review script), without being told again. The
-basics (git, "yes" before changes) are in `.claude/how-we-work.md`; "the work branch" (`<work>`
+basics (git, "yes" before changes) load in every chat from the plugin; "the work branch" (`<work>`
 below), "the review script", "production", "the paid services" and "the examples" mean the
-values in its **This project** table.
+values in the **This project** table of `.claude/td-commitcraft/project.md`.
 
 ## 1. During the review: change nothing
 

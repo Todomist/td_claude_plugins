@@ -6,10 +6,11 @@ description: Commit-by-commit review of a branch. Use when the owner starts a re
 Read `review-commits.md` in this folder (`${CLAUDE_PLUGIN_ROOT}/skills/review-commits/`) in
 full and follow it for the rest of this chat. The project's values (work branch, review script,
 production, paid services, examples) are in the **This project** table of
-`.claude/how-we-work.md`.
+`.claude/td-commitcraft/project.md`. If `.claude/td-commitcraft/review-commits.md` exists, read it too:
+the project's own rules for this skill, which win where they differ.
 
-If the project has no `.claude/how-we-work.md`, or it has no **This project** table, stop and
-ask the owner to add it from the template: `${CLAUDE_PLUGIN_ROOT}/templates/how-we-work.md`.
+If the project has no `.claude/td-commitcraft/project.md` with a **This project** table, stop
+and suggest `/td-commitcraft:init`.
 
 - The owner runs the review script themselves. Unless the table names another one, it is the
   script beside this file. Give the owner the command with the work branch as the base (a start

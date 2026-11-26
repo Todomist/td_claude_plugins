@@ -4,8 +4,7 @@ How a release is planned in numbered branches and how each branch is sized; how 
 the todos and the status file are kept; and how a release is cut, shipped, versioned and filed in
 its own folder. Commits inside a branch: `/td-commitcraft:commit-rules`. "The work branch", "the status file",
 "the branch plan", "the todos", "the releases folder" and "the release branch" mean the values in
-the **This project** table of `.claude/how-we-work.md`. If its **Extra planning rules** row names a
-file, those rules come on top of these.
+the **This project** table of `.claude/td-commitcraft/project.md`.
 
 ## Ask first
 

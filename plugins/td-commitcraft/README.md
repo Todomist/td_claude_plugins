@@ -2,9 +2,9 @@
 
 One versioned set of rules for how work happens in a project: plan a release in branches, plan
 and make commits, review a branch commit by commit, rebuild its history, and release from
-develop to main. The skills are
-general: each one takes the project's own values from the **This project** table in the
-project's `.claude/how-we-work.md`.
+develop to main. The basics (plan first, ask first, git basics, explaining, honesty) load in
+every chat; the skills are general and take the project's own values from its
+`.claude/td-commitcraft/project.md`.
 
 Install it for yourself:
 
@@ -31,14 +31,15 @@ The usual order in the life of a branch:
 5. Reviewing → `review-commits`
 6. After the merge → `plan-release` (status, plan row, todos; a release when it is time)
 
-## The contract: `.claude/how-we-work.md`
+## The contract: `.claude/td-commitcraft/`
 
-Every project has a `.claude/how-we-work.md`, copied from
-[templates/how-we-work.md](templates/how-we-work.md) and loaded in every chat from `CLAUDE.md`. It
-holds the basics the skills rely on and never repeat (plan first, ask first, git basics,
-explaining, honesty) and the **This project** table below. Every row must be in the table; write
-`none` when it does not apply yet. If the file or the table is missing, the skills stop and ask
-for it.
+At the start of every chat the plugin loads its basics ([essentials.md](essentials.md)) and the
+project's `.claude/td-commitcraft/project.md` ([template](templates/project.md)): the project's
+own rules, the **This project** table below, and the project's own skills. Where the project
+differs from the basics, the project wins. A file `.claude/td-commitcraft/<skill>.md` adds the
+project's rules for one skill (e.g. `plan-release.md`: "build only the current rung"). Every row
+must be in the table; write `none` when it does not apply yet. If `project.md` or its table is
+missing, the skills stop and suggest `/td-commitcraft:init`.
 
 | Row                    | Read by                                         | What it holds                                                     |
 | ---------------------- | ----------------------------------------------- | ----------------------------------------------------------------- |
@@ -52,7 +53,6 @@ for it.
 | Todos                  | plan-release, review-commits                    | The file with every todo, open and done, in one table             |
 | Releases folder        | plan-release                                    | Where the status, plan and todos sit, and a folder per release    |
 | Release branch         | plan-release                                    | Its name, and the branches it merges into once the release is out |
-| Extra planning rules   | plan-release                                    | A project file with more planning rules                           |
 | Review script          | commit-rules, review-commits, rebuild-commits   | `bundled`, or a path in the project                               |
 | Local review branch    | commit-rules, rebuild-commits                   | The owner's local copy of a branch for reviewing                  |
 | Debug log prefix       | commit-rules                                    | The prefix of temporary debug logs                                |
@@ -60,19 +60,23 @@ for it.
 | Paid services          | commit-rules, review-commits                    | Services that cost money per call, and their fakes                |
 | Examples for the owner | review-commits                                  | Real things from the product that explanations start from         |
 
-Project-only skills (for example a project's code rules) stay in the project, beside these.
+A project's own skills stay in the project; `project.md` lists them so they are suggested too.
 
 ## What it runs
 
-Nothing on its own: no hooks, no MCP servers, no network access, and it stores no data. The
-skills are instructions for Claude. Privacy: [PRIVACY.md](PRIVACY.md).
+No MCP servers, no network access, and it stores no data. The skills are instructions for
+Claude. Privacy: [PRIVACY.md](PRIVACY.md).
+
+- A `SessionStart` hook (`hooks/hooks.json`) prints `essentials.md` and the project's
+  `.claude/td-commitcraft/project.md` at the start of every chat, with `cat`. It reads nothing
+  else and writes nothing.
 
 - `skills/review-commits/review-commits.sh` runs only when the owner starts it in a terminal
   (`/td-commitcraft:review-commits` gives the full command, because the installed path changes
   with each version). It uses git on the current repository only: it refuses to start with
   uncommitted changes, checks out the branch's commits one at a time, discards edits made while
   reviewing when it moves on, and returns to the branch at the end. It never pushes.
-- `templates/how-we-work.md` is the template for the project's `.claude/how-we-work.md`.
+- `templates/project.md` is the template for the project's `.claude/td-commitcraft/project.md`.
 
 ## Versions
 

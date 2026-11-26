@@ -6,10 +6,11 @@ description: How commits are planned, sized, ordered and named, where debug logs
 Read `commit-rules.md` in this folder (`${CLAUDE_PLUGIN_ROOT}/skills/commit-rules/`) in full
 and follow it. The project's values (work branch, branch names, checks, run it, docs, paid
 services, local review branch, review script, log prefix) are in the **This project** table of
-`.claude/how-we-work.md`.
+`.claude/td-commitcraft/project.md`. If `.claude/td-commitcraft/commit-rules.md` exists, read it too:
+the project's own rules for this skill, which win where they differ.
 
-If the project has no `.claude/how-we-work.md`, or it has no **This project** table, stop and
-ask the owner to add it from the template: `${CLAUDE_PLUGIN_ROOT}/templates/how-we-work.md`.
+If the project has no `.claude/td-commitcraft/project.md` with a **This project** table, stop
+and suggest `/td-commitcraft:init`.
 
 Before the first commit of a branch, tell the owner how many commits it needs and what each
 holds, and wait for "yes".

@@ -4,7 +4,7 @@ Only when the owner asks. A big branch grows as work commits; before the commit-
 it can be rebuilt into a clean sequence. During a review nothing is rewritten: changes go on top
 as new commits (code first, then docs). Every rebuilt commit follows `/td-commitcraft:commit-rules`.
 "The work branch" (`<work>` below), "the checks" and "the review script" mean the values in the
-**This project** table of `.claude/how-we-work.md`.
+**This project** table of `.claude/td-commitcraft/project.md`.
 
 ## The life of a branch
 
@@ -23,7 +23,7 @@ that. Too many small commits make the review hard; so do commits that mix two th
 
 | Order | Commit holds                                                                                         | Example                                                        |
 | ----- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| 1     | The working rules, if the branch changes them (`CLAUDE.md`, how-we-work, skills, the doc index)      | `docs: review rules, commits core first then one feature each` |
+| 1     | The working rules, if the branch changes them (`CLAUDE.md`, `.claude/td-*/`, skills, the doc index) | `docs: review rules, commits core first then one feature each` |
 | 2     | A core piece the features stand on, one at a time, with its tests                                    | `feat(server): POST /v1/sync, the door for the app's changes`  |
 | 3     | **One feature or API, complete:** its shared contract, server, screens, the old route it replaces, tests | `feat: a new order goes through the door`                  |
 | 4     | ONE docs commit for everything the branch built                                                      | `docs: how offline mode works`                                 |

@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- The basics (plan first, ask first, git basics, explaining, honesty, which skill when) load in
+  every chat from the plugin: a `SessionStart` hook prints `essentials.md` and the project's
+  `.claude/td-commitcraft/project.md`. The project's file holds only its own rules, the This
+  project table and its own skills; `templates/project.md` replaces `templates/how-we-work.md`.
+- A file `.claude/td-commitcraft/<skill>.md` adds the project's rules for one skill; the project
+  wins where it differs. It replaces the **Extra planning rules** row.
+
 ## 0.1.2
 
 - The basics the skills rely on now ship with the plugin: `templates/how-we-work.md` (plan first,

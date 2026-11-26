@@ -50,9 +50,10 @@ For a whole project:
 
 2. **Once per clone:** open the project in Claude Code, trust the folder, then run
    `claude plugin install td-commitcraft@todomist --scope project`.
-3. **Add `.claude/how-we-work.md`** from the
-   [template](plugins/td-commitcraft/templates/how-we-work.md): the basics and the This project
-   table. Load it in every chat from `CLAUDE.md` (`@.claude/how-we-work.md`).
+3. **Add `.claude/td-commitcraft/project.md`** from the
+   [template](plugins/td-commitcraft/templates/project.md): the project's own rules and the This
+   project table. The plugin loads it, with its basics, in every chat: `CLAUDE.md` needs no line
+   for either.
 
 ### Pin and upgrade
 
@@ -69,12 +70,13 @@ For a whole project:
 On one branch in that project, after the owner's "yes":
 
 1. Add the settings above and install the plugin.
-2. Delete the local copies: `.claude/skills/{commit-rules,review-commits,rebuild-commits}/`,
-   `.claude/scripts/review-commits.sh`, and the planning and release rules that now live in
-   `/td-commitcraft:plan-release`. Keeping both would show two wordings (`/commit-rules` and
-   `/td-commitcraft:commit-rules`).
-3. In `.claude/how-we-work.md`, `.claude/skills/README.md` and `CLAUDE.md`: add or update the
-   This project table, and rename the skills to `/td-commitcraft:…`.
+2. Delete the local copies: `.claude/skills/{plan-release,commit-rules,review-commits,rebuild-commits}/`
+   and `.claude/scripts/review-commits.sh`. Keeping both would show two wordings
+   (`/commit-rules` and `/td-commitcraft:commit-rules`).
+3. Move the project's own rules, its This project table and its own skills from
+   `.claude/how-we-work.md` into `.claude/td-commitcraft/project.md`, then delete
+   `.claude/how-we-work.md` and its line in `CLAUDE.md`: the plugin loads the basics itself.
+   Rename the skills to `/td-commitcraft:…` in `.claude/skills/README.md` and `CLAUDE.md`.
 4. In a new chat: `/td-commitcraft:commit-rules` loads, and `/td-commitcraft:review-commits` gives
    the review script's full path.
 
