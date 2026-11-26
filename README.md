@@ -60,7 +60,9 @@ For a whole project:
    loads its basics and `project.md` in every chat: `CLAUDE.md` needs no line for either.
 4. **Run `/td-codecraft:init`:** it asks what the project is built with and writes
    `.claude/td-codecraft/stack.md` and the project's own `.claude/td-codecraft/code-rules.md`
-   ([templates](plugins/td-codecraft/templates/)).
+   ([templates](plugins/td-codecraft/templates/)). For an existing project, then run
+   `/td-codecraft:map`: it writes `.claude/td-codecraft/map.md`, what the project contains and
+   where it lives.
 
 ### Pin and upgrade
 

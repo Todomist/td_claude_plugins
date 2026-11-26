@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- `start-branch` also reads the project's map (`.claude/td-codecraft/map.md`) when it exists, to
+  see what a feature touches.
+
 ## 0.1.3
 
 - New `init`: sets up a project, or moves one onto the plugin. It asks for the project's own

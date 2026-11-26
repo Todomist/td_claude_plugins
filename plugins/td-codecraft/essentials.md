@@ -4,3 +4,6 @@
   suggest `/td-codecraft:code-rules` if it isn't loaded in this chat.
 - When a chat settles a tech decision (a library, a pattern, a convention, a service, or a change
   to one), suggest `/td-codecraft:decide`, so `.claude/td-codecraft/stack.md` stays current.
+- When a branch adds or removes a feature, a table, a route or a screen, suggest
+  `/td-codecraft:map`, so `.claude/td-codecraft/map.md` stays current. To find where something
+  lives, read `map.md` first.

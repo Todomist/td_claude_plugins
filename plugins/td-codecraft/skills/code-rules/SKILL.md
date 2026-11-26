@@ -4,8 +4,9 @@ description: How we write code - the code itself, database tables and migrations
 ---
 
 First read the project's `.claude/td-codecraft/stack.md` (its stack, conventions, approved
-libraries and decisions) and `.claude/td-codecraft/code-rules.md` (its own rules). If `stack.md`
-is missing, suggest `/td-codecraft:init`.
+libraries and decisions), `.claude/td-codecraft/code-rules.md` (its own rules) and, if it exists,
+`.claude/td-codecraft/map.md` (where everything lives). If `stack.md` is missing, suggest
+`/td-codecraft:init`.
 
 Then open `code-rules.md` in this folder (`${CLAUDE_PLUGIN_ROOT}/skills/code-rules/`) and read
 only the sections for what is being built, together with the same sections of the project's own

@@ -13,7 +13,8 @@ skill, which win where they differ. If `project.md` is missing, stop and suggest
 
 1. **Find the row.** In the branch plan's Now table, take row #N, or the row whose branch or words
    match what the owner said. Read the todos it lists under IDs, the status file, the docs the
-   row touches, and the project's stack (`.claude/td-codecraft/stack.md`) if it exists. If the
+   row touches, and the project's stack and map (`.claude/td-codecraft/stack.md`, `map.md`) if they
+   exist. If the
    row is `Merged`, or another row is `In progress`, say so and stop.
 2. **Check git.** `git branch --show-current` and `git status`: the work branch, with a clean
    tree. Otherwise change nothing: say what you found and wait.
