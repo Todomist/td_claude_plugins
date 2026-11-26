@@ -9,8 +9,8 @@
   names; each shipped release gets its own version folder. New table row **Releases folder**;
   the **Release branch** row now names the branch and where it merges.
 - `review-commits` is back, with its script `review-commits.sh`, which the owner runs in a
-  terminal. Its rule on secrets no longer reads `.env` files: it never opens them and masks any
-  secret that shows up in output or a log. The **Review script** row can say `bundled` again.
+  terminal. It may read `.env` files and logs during a review. The **Review script** row can say
+  `bundled` again.
 - README: install from `main` (`/plugin marketplace add Todomist/td_claude_plugins#main`), not
   from the default branch, which holds unreleased work.
 
