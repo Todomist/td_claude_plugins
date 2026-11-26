@@ -70,9 +70,28 @@ For a whole project:
   tag never moves, so the project stays on exactly that version until it changes the tag.
 - The `ref` is for the whole repository: every plugin a project uses from here comes from it.
   Plugins don't depend on each other, so that is safe.
-- Auto-update is off for our marketplace: nothing changes until the project updates. To
-  upgrade, on a branch in the project: change `ref` to the newer tag, then run
-  `claude plugin marketplace update todomist`.
+- Auto-update is off for our marketplace: nothing changes until the project updates.
+- A computer holds **one** `todomist` marketplace, declared in its `~/.claude/settings.json`
+  (`extraKnownMarketplaces.todomist`), and every project on it uses that copy. The project's own
+  `ref` is what everyone who clones it gets.
+
+To move a project to a newer tag, on a branch in the project (tested from 0.1.3 to 0.1.4):
+
+1. In the project's `.claude/settings.json`, set `ref` to the new tag.
+2. On this computer, if `~/.claude/settings.json` does not name the new tag yet, set its `ref` to
+   it too, then add the marketplace from exactly that source. A release from this repository
+   already does this step on the owner's computer.
+
+   ```
+   claude plugin marketplace add "Todomist/td_claude_plugins#<plugin>-v<version>"
+   ```
+
+   `claude plugin marketplace update todomist` alone keeps the tag the marketplace was added
+   with, even after the project's `ref` changes, and `add` with a newer tag is refused while
+   `~/.claude/settings.json` names an older one.
+3. In the project, for each plugin: `claude plugin update <plugin>@todomist --scope project`.
+4. Check `claude plugin list` (the new version, scope project, enabled), then start a new chat:
+   its first lines name each plugin and its version.
 
 ### Switch a project from its local copies
 
