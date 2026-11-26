@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.1
 
 - New `map`: writes or refreshes `.claude/td-codecraft/map.md`, what an existing project
   contains and where it lives (features, tables, routes, screens, outside services, docs), one

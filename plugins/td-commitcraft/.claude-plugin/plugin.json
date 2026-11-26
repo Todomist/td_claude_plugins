@@ -1,7 +1,7 @@
 {
   "name": "td-commitcraft",
   "displayName": "TD Commitcraft",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "One versioned set of rules for how work happens in a project: plan a release in branches, plan and make commits, review a branch commit by commit, rebuild its history, and release from develop to main. Project values come from the This project table in .claude/td-commitcraft/project.md.",
   "author": { "name": "Todomist" },
   "keywords": ["git", "commits", "branches", "release-planning", "workflow"],

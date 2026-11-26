@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.4
 
 - `start-branch` also reads the project's map (`.claude/td-codecraft/map.md`) when it exists, to
   see what a feature touches.

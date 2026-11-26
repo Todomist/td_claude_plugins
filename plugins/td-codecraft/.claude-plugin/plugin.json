@@ -1,7 +1,7 @@
 {
   "name": "td-codecraft",
   "displayName": "TD Codecraft",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "How we write code, and a record of every tech decision: init asks about a project's stack and writes .claude/td-codecraft/stack.md, decide keeps it current, and code-rules gives one set of rules for the code, the database, the API and the app, on top of the project's own.",
   "author": { "name": "Todomist" },
   "keywords": ["code-rules", "stack", "decisions", "typescript", "postgresql"],
