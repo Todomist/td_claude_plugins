@@ -25,8 +25,9 @@ Planned work: [.claude/todo.md](.claude/todo.md).
 - Plugins never depend on each other and never use files outside their own folder.
 - Skills stay general: project values come from the project's **This project** table (the
   `td-commitcraft` README is the contract). Project-only skills stay in their projects.
-- A change projects should get raises that plugin's version, and only that plugin's, with a
-  `CHANGELOG.md` entry. `version` lives in `plugin.json` only, never in the marketplace entry.
+- Every push of `develop` is a new version: raise that plugin's version (patch for changes to
+  existing skills), turn its CHANGELOG's Unreleased into it, tag `<plugin>-v<version>`, and push
+  `develop` and the tag. A tag never moves or gets deleted. `version` lives in `plugin.json` only, never in the marketplace entry.
 - A skill points to its own files with `${CLAUDE_PLUGIN_ROOT}` in `SKILL.md`. The variable is
   replaced only in `SKILL.md`, not in the files it points to.
 - The repository is public: no secrets, and no private details from our projects.

@@ -6,7 +6,7 @@ extensions (commands, agents, hooks, MCP servers). Never a new repository per pl
 
 | Plugin                                 | Version | What it holds                                                    |
 | -------------------------------------- | ------- | ---------------------------------------------------------------- |
-| [td-commitcraft](plugins/td-commitcraft/README.md) | 0.1.0   | How we work in a project: plan, commit, review, rebuild, release |
+| [td-commitcraft](plugins/td-commitcraft/README.md) | 0.1.1   | How we work in a project: plan, commit, review, rebuild, release |
 
 Planned next: [.claude/todo.md](.claude/todo.md).
 
@@ -25,12 +25,11 @@ Planned next: [.claude/todo.md](.claude/todo.md).
 
 ## Use a plugin in a project
 
-The repository is public, so installing needs no GitHub login. For now we install from
-`develop`, the up-to-date version (`main` stays frozen while the directory appeal is open: todo
-R4). For yourself only:
+The repository is public, so installing needs no GitHub login. Every version has a tag,
+`<plugin>-v<version>`; use the latest (GitHub → Tags). For yourself only:
 
 ```
-/plugin marketplace add Todomist/td_claude_plugins#develop
+/plugin marketplace add Todomist/td_claude_plugins#td-commitcraft-v0.1.1
 /plugin install td-commitcraft@todomist
 ```
 
@@ -42,7 +41,7 @@ For a whole project:
    {
      "extraKnownMarketplaces": {
        "todomist": {
-         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "develop" }
+         "source": { "source": "github", "repo": "Todomist/td_claude_plugins", "ref": "td-commitcraft-v0.1.1" }
        }
      },
      "enabledPlugins": { "td-commitcraft@todomist": true }
@@ -56,14 +55,13 @@ For a whole project:
 
 ### Pin and upgrade
 
-- For now, `"ref": "develop"`: the up-to-date version, while `main` stays frozen for the
-  directory appeal (todo R4). Once releases go to `main` again, projects switch to
-  `"ref": "main"`, which changes only through a release.
-- We don't use tags; to stay on one exact commit, `ref` can be its full 40-character SHA.
+- Projects pin `ref` to a version tag, `<plugin>-v<version>` (e.g. `td-commitcraft-v0.1.1`). A
+  tag never moves, so the project stays on exactly that version until it changes the tag.
 - The `ref` is for the whole repository: every plugin a project uses from here comes from it.
   Plugins don't depend on each other, so that is safe.
-- Auto-update is off for our marketplace: nothing changes until the project updates. To get the
-  latest release, run `claude plugin marketplace update todomist`.
+- Auto-update is off for our marketplace: nothing changes until the project updates. To
+  upgrade, on a branch in the project: change `ref` to the newer tag, then run
+  `claude plugin marketplace update todomist`.
 
 ### Switch a project from its local copies
 
@@ -98,16 +96,17 @@ On one branch in that project, after the owner's "yes":
 
 ### Release a new version
 
-Work happens on `develop`, the default branch. `main` holds released versions only: the owner
-creates it and pushes to it, by hand or through a CI/CD pipeline. Nothing is released or pushed
-without the owner's explicit "yes". We don't use tags.
+Work happens on `develop`, the default branch. Every push of `develop` is a new version with
+its own tag. Nothing is pushed or tagged without the owner's explicit "yes".
 
 1. While working: each change adds a line under **Unreleased** in that plugin's `CHANGELOG.md`.
-   The version stays as it is.
-2. To release: on `develop`, raise only that plugin's `version` in its `plugin.json` (major,
-   minor or patch: the plugin's README says which), turn **Unreleased** into that version in the
-   CHANGELOG, and update the table at the top.
-3. Merge into `main` with `--no-ff`, then push `main`.
-4. The Claude directory follows `main`: publish the new version in the developer portal.
-   Projects following `main` get it when they run `claude plugin marketplace update todomist`
-   (for now projects follow `develop`: see "Pin and upgrade").
+2. Before the push: raise only that plugin's `version` in its `plugin.json` (patch for changes
+   to existing skills; minor or major as the plugin's README says), turn **Unreleased** into
+   that version in the CHANGELOG, and update the table at the top.
+3. Commit, tag the commit `<plugin>-v<version>` (e.g. `td-commitcraft-v0.1.1`), then push
+   `develop` and the tag. A tag never moves or gets deleted.
+4. Projects get it when they move their `ref` to the new tag.
+
+`main` holds what the Claude directory lists, and the directory follows it. It changes only when
+the owner releases to the directory: merge `develop` into `main` with `--no-ff`, push `main`,
+publish in the developer portal (todo R4).

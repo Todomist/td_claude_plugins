@@ -1,7 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.1.1
 
+- Versions: every push raises the version and gets a tag, `td-commitcraft-v<version>`, which
+  never moves. Projects pin `ref` to that tag.
 - `plan-release`: **When** on a todo is the release (`0.2`), not the version (`0.2.17`); finishing
   touches sets it to this release on each row it still needs.
 - `plan-release`: after a branch is merged, Claude also updates its notes (memory) with where we
@@ -15,8 +17,8 @@
 - `review-commits` is back, with its script `review-commits.sh`, which the owner runs in a
   terminal. It may read `.env` files and logs during a review. The **Review script** row can say
   `bundled` again.
-- README: install from `develop` for now (`/plugin marketplace add Todomist/td_claude_plugins#develop`),
-  the up-to-date version, while `main` stays frozen for the directory appeal.
+- README: install from a version tag (`/plugin marketplace add
+  Todomist/td_claude_plugins#td-commitcraft-v0.1.1`).
 
 ## 0.1.0
 

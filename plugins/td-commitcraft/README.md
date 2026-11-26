@@ -9,7 +9,7 @@ project's `.claude/how-we-work.md`.
 Install it for yourself:
 
 ```
-/plugin marketplace add Todomist/td_claude_plugins#develop
+/plugin marketplace add Todomist/td_claude_plugins#td-commitcraft-v0.1.1
 /plugin install td-commitcraft@todomist
 ```
 
@@ -80,5 +80,6 @@ skills are instructions for Claude. Privacy: [PRIVACY.md](PRIVACY.md).
 - **Minor** (0.1 → 0.2): a new skill or a new part of the plugin, such as a hook.
 - **Major** (→ 1.0.0): a big rework of how the plugin works.
 
-Changes collect under **Unreleased** in the CHANGELOG. The version is raised, tagged and
-released only after the owner's explicit "yes".
+Changes collect under **Unreleased** in the CHANGELOG. Each push turns them into a new version
+with a tag, `td-commitcraft-v<version>`, which never moves; projects pin `ref` to it. Nothing is
+pushed or tagged without the owner's explicit "yes".
