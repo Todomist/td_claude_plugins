@@ -106,16 +106,17 @@ its own tag. Nothing is pushed or tagged without the owner's explicit "yes".
    that version in the CHANGELOG, and update the table at the top.
 3. Commit, tag the commit `<plugin>-v<version>` (e.g. `td-commitcraft-v0.1.2`), then push
    `develop` and the tag. A tag never moves or gets deleted.
-4. Move the marketplace on this machine to the new tag, then update the plugin in each project
-   that uses it (`claude plugin list` shows where; today Yaari's `mobile-app`) and restart
-   Claude Code there. `claude plugin marketplace update todomist` alone keeps the old tag:
+4. Move the marketplace on this machine to the new tag, so projects can fetch it.
+   `claude plugin marketplace update todomist` alone keeps the old tag:
 
    ```
    claude plugin marketplace add "Todomist/td_claude_plugins#<plugin>-v<version>"
-   cd <project> && claude plugin update <plugin>@todomist --scope project
    ```
 
-5. Each project moves its `ref` in `.claude/settings.json` to the new tag, on its own branch.
+5. Each project updates itself, when it wants and on its own branch: it moves its `ref` in
+   `.claude/settings.json` to the new tag, runs
+   `claude plugin update <plugin>@todomist --scope project`, and restarts Claude Code. Releasing
+   from this repository never updates a project's installed plugin.
 
 `main` holds what the Claude directory lists, and the directory follows it. It changes only when
 the owner releases to the directory: merge `develop` into `main` with `--no-ff`, push `main`,
