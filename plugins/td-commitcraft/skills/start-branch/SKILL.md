@@ -16,8 +16,10 @@ skill, which win where they differ. If `project.md` is missing, stop and suggest
    row touches, and the project's stack and map (`.claude/td-codecraft/stack.md`, `map.md`) if they
    exist. If the
    row is `Merged`, or another row is `In progress`, say so and stop.
-2. **Check git.** `git branch --show-current` and `git status`: the work branch, with a clean
-   tree. Otherwise change nothing: say what you found and wait.
+2. **Check git.** The **This branch** block at the start of the chat shows the branch and the
+   tree; check again now with `git branch --show-current` and `git status`: the work branch,
+   with a clean tree. Otherwise change nothing: say what you found and wait. Creating a branch
+   anywhere else is blocked by the plugin's branch guard.
 3. **Show the plan** in the chat, then wait for "yes":
    - the branch name (as the **Branch names** row says) and what it delivers, in the words of the
      plan and its todos;

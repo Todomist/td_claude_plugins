@@ -17,6 +17,11 @@ Nothing is written until the owner says "yes" to the full text of every file.
   table, its rows for the project's own skills, and every rule that is not one of the basics this
   plugin loads (compare with `${CLAUDE_PLUGIN_ROOT}/essentials.md`) move across. Nothing gets
   lost: list each rule and where it goes.
+- Read Claude's own notes for this project too (its memory: the index and the notes it points
+  to). Notes stay on one computer; the repository is shared. List every rule or decision in them
+  that the repository does not have yet, and where it should go: `project.md` (a project rule or
+  a table value), the project's docs (how something works), or `.claude/td-codecraft/stack.md` (a
+  tech decision, if td-codecraft is used).
 
 ## 2. Ask, in one round
 
@@ -39,6 +44,8 @@ Ask only what you could not find, each with a suggested answer:
   `project.md` itself.
 - An older `.claude/how-we-work.md`: propose deleting it once its content has moved. The owner
   decides.
+- Each note from Claude's memory that the owner wants in the repository, in the place listed.
+  The notes themselves stay as they are.
 
 Don't commit: list the changed files and suggest `/td-commitcraft:commit-rules`. If
 `/td-codecraft:init` is available, suggest it next, for the project's stack.

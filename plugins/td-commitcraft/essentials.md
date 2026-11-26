@@ -3,7 +3,9 @@
 Loaded at the start of every chat by the td-commitcraft plugin. These basics apply to every
 project. The project's own rules and values follow below, from
 `.claude/td-commitcraft/project.md`; where the project differs, the project wins. A file
-`.claude/td-commitcraft/<skill>.md` adds the project's rules for that one skill.
+`.claude/td-commitcraft/<skill>.md` adds the project's rules for that one skill. Last comes a
+**This branch** block: the current branch, whether the tree is clean, its row in the branch plan,
+and the rules for starting a branch or working on one.
 
 ## Plan first
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+- A **This branch** block at the start of every chat (`hooks/session-start.sh`): the current
+  branch and whether the tree is clean, then on the work branch the steps to start a branch, on
+  any other branch its row in the branch plan and the commit basics (`branch-essentials.md`). A
+  detached HEAD says a review may be running.
+- A branch guard (`hooks/branch-guard.sh`): `git checkout -b` and `git switch -c` are blocked
+  unless the current branch is a clean work branch.
+- The start of every chat names the plugin and its version.
+- `init` also reads Claude's notes for the project (its memory) and lists every rule or decision
+  in them that the repository does not have yet, with where it should go.
+
 ## 0.1.4
 
 - `start-branch` also reads the project's map (`.claude/td-codecraft/map.md`) when it exists, to

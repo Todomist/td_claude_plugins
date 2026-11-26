@@ -70,9 +70,17 @@ A project's own skills stay in the project; `project.md` lists them so they are 
 No MCP servers, no network access, and it stores no data. The skills are instructions for
 Claude. Privacy: [PRIVACY.md](PRIVACY.md).
 
-- A `SessionStart` hook (`hooks/hooks.json`) prints `essentials.md` and the project's
-  `.claude/td-commitcraft/project.md` at the start of every chat, with `cat`. It reads nothing
-  else and writes nothing.
+- `hooks/session-start.sh` (`SessionStart`) prints, at the start of every chat: the plugin's
+  name and version (from `plugin.json`), `essentials.md`, the project's
+  `.claude/td-commitcraft/project.md`, and a **This branch** block. The block reads git (the
+  current branch, `git status`), the Work branch and Branch plan rows of `project.md`, and the
+  branch plan file, then prints the matching part of `branch-essentials.md`. Read-only; it always
+  exits 0.
+- `hooks/branch-guard.sh` (`PreToolUse` on Bash, only for `git checkout -b` and `git switch -c`)
+  reads the command, the Work branch row of `project.md` and git (the current branch,
+  `git status`). If this is not a clean work branch it blocks the command (exit 2) with a one-line
+  reason; otherwise it lets it run. Read-only. `git branch <name>` is not checked, so
+  `rebuild-commits` can make its backup branch.
 
 - `skills/review-commits/review-commits.sh` runs only when the owner starts it in a terminal
   (`/td-commitcraft:review-commits` gives the full command, because the installed path changes

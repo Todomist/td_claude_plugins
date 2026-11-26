@@ -3,10 +3,16 @@
     "SessionStart": [
       {
         "hooks": [
-          {
-            "type": "command",
-            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/essentials.md\"; p=\"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/td-commitcraft/project.md\"; echo; if [ -f \"$p\" ]; then cat \"$p\"; else echo \"This project has no .claude/td-commitcraft/project.md yet: suggest /td-commitcraft:init.\"; fi"
-          }
+          { "type": "command", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh\"" }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "if": "Bash(git checkout -b *)", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/branch-guard.sh\"" },
+          { "type": "command", "if": "Bash(git switch -c *)", "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/branch-guard.sh\"" }
         ]
       }
     ]
