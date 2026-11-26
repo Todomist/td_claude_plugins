@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- `plan-release`: **When** on a todo is the release (`0.2`), not the version (`0.2.17`); finishing
+  touches sets it to this release on each row it still needs.
+- `plan-release`: after a branch is merged, Claude also updates its notes (memory) with where we
+  are.
 - `plan-release` is the version finalised in our projects: the status, the branch plan (Now and
   Next) and the todos sit at the top of the releases folder; the todos are one table with a Done
   date; finishing touches picks what the release still needs; a release branch is cut from the

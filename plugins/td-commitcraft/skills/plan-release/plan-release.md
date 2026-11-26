@@ -69,8 +69,8 @@ after it is closed, with the date, so the file shows progress by month and by re
 
 | ID  | Todo                     | Details | Suggested                 | When   | Priority | Done        | Notes |
 | --- | ------------------------ | ------- | ------------------------- | ------ | -------- | ----------- | ----- |
-| N13 | Settings refresh on pull | …       | `chore/finishing-touches` | 0.2.17 | P1       |             |       |
-| T1  | Release docs layout      | …       | `chore/finishing-touches` | 0.2.17 | P1       | 26 Nov 2026 |       |
+| N13 | Settings refresh on pull | …       | `chore/finishing-touches` | 0.2    | P1       |             |       |
+| T1  | Release docs layout      | …       | `chore/finishing-touches` | 0.2    | P1       | 26 Nov 2026 |       |
 
 - **ID:** a letter for the topic and a number; a key of the letters sits above the table. It
   never changes, so a row can be named in a chat, a commit or the branch plan. A new row takes
@@ -100,13 +100,13 @@ the version folder, and what is done shows in the todos.
 ## After a branch is merged
 
 Update the status file, the branch's row in the branch plan (`Merged`) and the todos: each row
-the branch built gets its Done date, and new "later" rows are added. The owner starts a new chat
-for the next branch.
+the branch built gets its Done date, and new "later" rows are added. Also update your notes
+(Claude's memory) with where we are. The owner starts a new chat for the next branch.
 
 ## Finishing touches: the last branch of every release
 
 `chore/finishing-touches` builds nothing new. It goes through the todos, sets **When** to this
-release's version on each row the release still needs and moves the rest to a later release;
+release (`0.2`) on each row it still needs and moves the rest to a later release;
 then it cleans up code and docs, keeps the test docs current, tests everything by hand and fixes
 the bugs it finds. Its row in the branch plan lists the IDs it picked.
 
